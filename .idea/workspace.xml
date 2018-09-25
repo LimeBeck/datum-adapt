@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="952a3abe-afe8-4b06-88a4-52b5f15ee443" name="Default Changelist" comment="Create map app">
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/ol.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/ol.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/open_map.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/js/openlayers_map.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/lib/ol.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/lib/ol.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/templates/map/open_map.html" afterDir="false" />
+    <list default="true" id="952a3abe-afe8-4b06-88a4-52b5f15ee443" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/map/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/map/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/map/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/map/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/map/static/map/js/openlayers_map.js" beforeDir="false" afterPath="$PROJECT_DIR$/map/static/map/js/openlayers_map.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,16 +65,16 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="60" />
-          <entry key="js" value="586" />
+          <entry key="js" value="763" />
           <entry key="py" value="314" />
-          <entry key="txt" value="63" />
+          <entry key="txt" value="103" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="60" />
-          <entry key="JavaScript" value="586" />
-          <entry key="PLAIN_TEXT" value="63" />
+          <entry key="JavaScript" value="763" />
+          <entry key="PLAIN_TEXT" value="103" />
           <entry key="Python" value="314" />
         </counts>
       </usages-collector>
@@ -128,8 +120,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/map/static/map/js/openlayers_map.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="47" column="71" selection-start-line="47" selection-start-column="71" selection-end-line="47" selection-end-column="71" />
+            <state relative-caret-position="534">
+              <caret line="115" column="36" selection-start-line="115" selection-start-column="36" selection-end-line="115" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -146,8 +138,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/map/templates/map/open_map.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+            <state relative-caret-position="375">
+              <caret line="25" column="12" lean-forward="true" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -386,7 +378,14 @@
       <option name="project" value="LOCAL" />
       <updated>1537875574177</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add OpenLayers map. Add cards, icons">
+      <created>1537880944041</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1537880944042</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -445,7 +444,8 @@
     <MESSAGE value="Add requirement for swagger" />
     <MESSAGE value="Create map app" />
     <MESSAGE value="Add old leaflet map" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add old leaflet map" />
+    <MESSAGE value="Add OpenLayers map. Add cards, icons" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add OpenLayers map. Add cards, icons" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/manage.py">
@@ -688,10 +688,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/map/static/map/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="36" column="71" lean-forward="true" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/map/templates/map/open_map.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+        <state relative-caret-position="375">
+          <caret line="25" column="12" lean-forward="true" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -702,17 +709,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/map/static/map/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="36" column="71" lean-forward="true" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/map/static/map/js/openlayers_map.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="47" column="71" selection-start-line="47" selection-start-column="71" selection-end-line="47" selection-end-column="71" />
+        <state relative-caret-position="534">
+          <caret line="115" column="36" selection-start-line="115" selection-start-column="36" selection-end-line="115" selection-end-column="36" />
         </state>
       </provider>
     </entry>

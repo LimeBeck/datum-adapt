@@ -49,14 +49,8 @@ var ObjView = Marionette.View.extend({
             }))
         }));
 
-        var markersSource = new ol.source.Vector({
-            features: [marker]
-        });
+        window.markersSource.addFeature(marker)
 
-        var markersLayer = new ol.layer.Vector({
-            source: markersSource
-        });
-        window.map.addLayer(markersLayer);
     },
     events: {
         'click': 'flyToMarker'
@@ -80,10 +74,7 @@ var ObjListView = Marionette.CollectionView.extend({
     childView: ObjView,
 
     childViewContainer: '#obj-list',
-    template: _.template(`
-        <div id="obj-list">
-        </div>
-    `),
+    template: _.template($('#obj-list-template').html()),
     collectionEvents: {
         'sync': 'render'
     },
@@ -111,12 +102,27 @@ var App = Marionette.Application.extend({
             view: window.view
         });
 
+        window.markersSource = new ol.source.Vector({
+        });
+
+        var markersLayer = new ol.layer.Vector({
+            source: window.markersSource
+        });
+
+        window.map.addLayer(markersLayer);
+
 
         window.map.on(
-            'zoomend', function () {
-                // ToDo: Add layer disapeared here
+            'moveend', function () {
+                // console.log("Zoom:" + window.view.getZoom())
+                if(window.view.getZoom()<15){
+                    markersLayer.setVisible(false)
+                }
+                else{
+                    markersLayer.setVisible(true)
+                }
             }
-        )
+        );
 
         var objlist = new ObjList();
         var objListView = new ObjListView({collection: objlist});
