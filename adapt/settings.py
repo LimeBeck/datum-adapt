@@ -31,7 +31,9 @@ ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1']
 INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
+    'rest_framework_gis',
     'pollsapi',
+    'map',
     'rest_framework_swagger',
     'polls.apps.PollsConfig',
     'django.contrib.admin',
@@ -77,7 +79,7 @@ WSGI_APPLICATION = 'adapt.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'adapt',
         'USER': 'postgres',
         'PASSWORD': 'qwerty12+',
