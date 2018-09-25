@@ -2,62 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="952a3abe-afe8-4b06-88a4-52b5f15ee443" name="Default Changelist" comment="Create map app">
-      <change afterPath="$PROJECT_DIR$/map/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/L.Control.MousePosition.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/assets/cancel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/assets/check.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/assets/focus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/assets/rulers.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/assets/start.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/assets/trash.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/images/dstu-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/images/dstu-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/images/icons8-barbell-filled-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/images/icons8-library-filled-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/images/icons8-monument-filled-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/images/icons8-park-bench-filled-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/images/layers-2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/images/layers.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/images/marker-icon-2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/images/marker-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/images/marker-shadow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/images/parks.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/landing.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/leaflet-measure.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/leaflet.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/map.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/map/static/map/css/ol.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/map/static/map/css/ol.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/map/static/map/css/open_map.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/map/static/map/js/openlayers_map.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/lib/L.Control.MousePosition.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/lib/backbone.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/lib/backbone.marionette.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/lib/backbone.marionette.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/lib/backbone.marionette.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/lib/backbone.marionette.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/lib/backbone.radio.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/lib/backbone.radio.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/lib/bootstrap.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/lib/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/lib/json2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/lib/leaflet-measure.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/lib/leaflet-src.esm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/lib/leaflet-src.esm.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/lib/leaflet-src.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/lib/leaflet-src.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/lib/leaflet.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/lib/leaflet.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/lib/underscore.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/templates/map/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/templates/map/map.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/map/static/map/lib/ol.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/map/static/map/lib/ol.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/map/templates/map/open_map.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapt/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/adapt/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapt/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/adapt/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/map/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/map/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/map/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/map/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/map/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/map/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/map/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/map/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -118,30 +72,36 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="278" />
-          <entry key="txt" value="44" />
+          <entry key="html" value="60" />
+          <entry key="js" value="586" />
+          <entry key="py" value="314" />
+          <entry key="txt" value="63" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="44" />
-          <entry key="Python" value="278" />
+          <entry key="HTML" value="60" />
+          <entry key="JavaScript" value="586" />
+          <entry key="PLAIN_TEXT" value="63" />
+          <entry key="Python" value="314" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="1" />
-          <entry key="js" value="2" />
-          <entry key="py" value="12" />
+          <entry key="css" value="4" />
+          <entry key="html" value="3" />
+          <entry key="js" value="3" />
+          <entry key="py" value="14" />
           <entry key="txt" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="1" />
-          <entry key="JavaScript" value="2" />
+          <entry key="CSS" value="4" />
+          <entry key="HTML" value="3" />
+          <entry key="JavaScript" value="3" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="12" />
+          <entry key="Python" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -157,99 +117,55 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/map/serializers.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="61" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/map/static/map/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="111" column="68" selection-start-line="111" selection-start-column="46" selection-end-line="111" selection-end-column="68" />
+            <state relative-caret-position="219">
+              <caret line="36" column="71" lean-forward="true" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="71" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/map/static/map/js/openlayers_map.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/map/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="25" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="459">
+              <caret line="47" column="71" selection-start-line="47" selection-start-column="71" selection-end-line="47" selection-end-column="71" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/map/migrations/0001_initial.py">
+        <entry file="file://$PROJECT_DIR$/map/templates/map/map.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-              <folding>
-                <element signature="e#49#91#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="684">
+              <caret line="53" selection-start-line="53" selection-end-line="53" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pollsapi/admin.py">
+        <entry file="file://$PROJECT_DIR$/map/templates/map/open_map.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="690">
+              <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/map/admin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/map/urls.py">
+        <entry file="file://$PROJECT_DIR$/map/static/map/css/open_map.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
-              <folding>
-                <element signature="e#0#34#0" expanded="true" />
-              </folding>
+              <caret line="12" column="4" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/adapt/urls.py">
+        <entry file="file://$PROJECT_DIR$/map/static/map/css/map.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
-              <folding>
-                <element signature="e#629#661#0" expanded="true" />
-              </folding>
+            <state>
+              <caret selection-end-line="29" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -261,6 +177,8 @@
       <list>
         <option value="Python Script" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -292,8 +210,6 @@
         <option value="$PROJECT_DIR$/polls/urls.py" />
         <option value="$PROJECT_DIR$/pollsapi/urls.py" />
         <option value="$PROJECT_DIR$/map/models.py" />
-        <option value="$PROJECT_DIR$/map/views.py" />
-        <option value="$PROJECT_DIR$/map/urls.py" />
         <option value="$PROJECT_DIR$/adapt/urls.py" />
         <option value="$PROJECT_DIR$/map/admin.py" />
         <option value="$PROJECT_DIR$/map/migrations/0001_initial.py" />
@@ -301,6 +217,11 @@
         <option value="$PROJECT_DIR$/adapt/settings.py" />
         <option value="$PROJECT_DIR$/map/serializers.py" />
         <option value="$PROJECT_DIR$/map/static/map/js/openlayer_map.js" />
+        <option value="$PROJECT_DIR$/map/views.py" />
+        <option value="$PROJECT_DIR$/map/urls.py" />
+        <option value="$PROJECT_DIR$/map/static/map/css/open_map.css" />
+        <option value="$PROJECT_DIR$/map/templates/map/open_map.html" />
+        <option value="$PROJECT_DIR$/map/static/map/js/openlayers_map.js" />
       </list>
     </option>
   </component>
@@ -311,8 +232,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="961" />
-    <option name="width" value="959" />
+    <option name="x" value="797" />
+    <option name="width" value="1123" />
     <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -363,13 +284,36 @@
               <item name="map" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="map" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="datum-adapt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="datum-adapt" type="462c0819:PsiDirectoryNode" />
+              <item name="map" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="map" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="datum-adapt" type="b2602c69:ProjectViewProjectNode" />
               <item name="datum-adapt" type="462c0819:PsiDirectoryNode" />
               <item name="map" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="map" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="datum-adapt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="datum-adapt" type="462c0819:PsiDirectoryNode" />
+              <item name="map" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="datum-adapt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="datum-adapt" type="462c0819:PsiDirectoryNode" />
+              <item name="map" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="map" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="datum-adapt" type="b2602c69:ProjectViewProjectNode" />
@@ -384,12 +328,16 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../datum-test-master" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/map/static/map/css" />
+      <recent name="$PROJECT_DIR$/map/static/map/lib" />
       <recent name="$PROJECT_DIR$/map/static/map" />
       <recent name="$PROJECT_DIR$/map/templates/map" />
     </key>
@@ -431,14 +379,21 @@
       <option name="project" value="LOCAL" />
       <updated>1537869467093</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add old leaflet map">
+      <created>1537875574177</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1537875574177</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="961" y="0" width="959" height="1050" extended-state="4" />
+    <frame x="797" y="0" width="1123" height="1050" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49944994" visible="true" weight="0.19411123" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49944994" visible="true" weight="0.16466235" />
       <window_info id="Structure" order="1" sideWeight="0.50055003" side_tool="true" weight="0.19037433" />
       <window_info id="Favorites" order="2" sideWeight="0.50055003" side_tool="true" weight="0.19037433" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
@@ -489,7 +444,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add requirement for swagger" />
     <MESSAGE value="Create map app" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create map app" />
+    <MESSAGE value="Add old leaflet map" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add old leaflet map" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/manage.py">
@@ -611,32 +567,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/map/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/adapt/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
           <folding>
             <element signature="e#629#661#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -711,15 +647,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/map/static/map/lib/ol.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/static/map/css/ol.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <marker date="1537875887279" expanded="true" signature="363:368" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="57" selection-start-line="12" selection-start-column="57" selection-end-line="12" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/static/map/css/map.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="29" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/static/map/css/open_map.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="4" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/templates/map/open_map.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/templates/map/map.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="53" selection-start-line="53" selection-end-line="53" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/map/static/map/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="111" column="68" selection-start-line="111" selection-start-column="46" selection-end-line="111" selection-end-column="68" />
+        <state relative-caret-position="219">
+          <caret line="36" column="71" lean-forward="true" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="71" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/map/static/map/js/openlayers_map.js">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="47" column="71" selection-start-line="47" selection-start-column="71" selection-end-line="47" selection-end-column="71" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

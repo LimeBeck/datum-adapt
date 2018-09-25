@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="static/map/css/ol.css"/>
+    <link rel="stylesheet" type="text/css" href="static/map/css/open_map.css"/>
+    <link rel="stylesheet" type="text/css" href="static/map/css/bootstrap.css"/>
+    <script src="static/map/lib/underscore.js"></script>
+    <script src="static/map/lib/jquery.js"></script>
+    <script src="static/map/lib/backbone.js"></script>
+    <script src="static/map/lib/backbone.radio.js"></script>
+    <script src="static/map/lib/backbone.marionette.js"></script>
+    <script src="static/map/lib/bootstrap.bundle.js"></script>
+    <script src="static/map/lib/ol.js"></script>
+
+    <title>Map</title>
+</head>
+<body>
+<div id="container">
+    <div id="map" class="map"></div>
+    <div id="objects">
+    </div>
+</div>
+
+<!--Templates-->
+<script id="obj-list-template" type="x-template/underscore">
+    <div id="obj-list">
+    </div>
+</script>
+
+<script id="object-card-template" type="x-template/underscore">
+    <div id="object-card" class="card" style="width: 15rem;">
+        <div class="card-header">
+            <p><%= name %></p>
+        </div>
+        <div id="card-<%= id %>" class="card-body collapse">
+            <p><%= description %></p>
+        </div>
+    </div>
+</script>
+
+<script id="popup-text-template" type="x-template/underscore">
+    <p style="font-weight:900"><%= name %></p>
+    <p><%= description %></p>
+</script>
+
+<!--Script-->
+<script src="static/map/js/openlayers_map.js"></script>
+
+</body>
+</html>

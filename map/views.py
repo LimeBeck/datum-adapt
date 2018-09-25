@@ -14,6 +14,10 @@ def map_view(request):
     return render(request, "map/map.html")
 
 
+def open_map_view(request):
+    return render(request, "map/open_map.html")
+
+
 # Create your views here.
 class TypesViewSet(viewsets.ModelViewSet):
     queryset = Types.objects.all()
