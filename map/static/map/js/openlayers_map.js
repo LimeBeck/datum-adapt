@@ -66,7 +66,7 @@ var styles = {
             scale: 0.7
         }))
     })
-}
+};
 
 
 var ObjView = Marionette.View.extend({
@@ -92,12 +92,12 @@ var ObjView = Marionette.View.extend({
         this.render()
     },
     events: {
-        'click': 'flyToMarker'
+        'click': 'flyToMarker',
+        'click #delete': 'deleteModel',
+        'click #change': 'changeModel'
     },
-    flyToMarker: function () {
-
-        // point = ol.proj.fromLonLat(this.model.get('geom').coordinates.slice().reverse());
-        // console.log(point);
+    flyToMarker: function (e) {
+        console.log("fly");
         window.view.animate({
                 center: this.point,
                 duration: 500,
@@ -105,8 +105,13 @@ var ObjView = Marionette.View.extend({
             }
         );
         $(".collapse").hide();
-        $("#card-" + this.model.get('id')).toggle();
-        $("#card-footer-" + this.model.get('id')).toggle();
+        $(e.currentTarget).find(".collapse").toggle();
+    },
+    deleteModel: function (e) {
+        console.log(this.model);
+    },
+    changeModel: function (e) {
+        console.log(this.model);
     }
 });
 
