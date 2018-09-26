@@ -1,3 +1,10 @@
+$(document).ajaxSend(function (event, request) {
+    var token = "Token 695672c4e9320d30f7714b35b069b8857b6bd63c";
+    if (token) {
+        request.setRequestHeader("Authorization", token);
+    }
+});
+
 var Types = Backbone.Model.extend({
     defaults: function () {
         return {
@@ -11,7 +18,7 @@ var Objects = Backbone.Model.extend({
     defaults: function () {
         return {
             name: "Default object name",
-            type: "0",
+            type: "1",
             description: "Default object description",
             geom: {
                 'type': 'Point',
@@ -34,25 +41,29 @@ var styles = {
         image: new ol.style.Icon(({
             crossOrigin: 'anonymous',
             src: 'static/map/css/images/icons8-park-bench-filled-50.png',
-            size: [50, 50]
+            size: [50, 50],
+            scale: 0.7
         }))
     }),
     2: new ol.style.Style({
         image: new ol.style.Icon(({
             crossOrigin: 'anonymous',
-            src: 'static/map/css/images/icons8-monument-filled-50.png'
+            src: 'static/map/css/images/icons8-monument-filled-50.png',
+            scale: 0.7
         }))
     }),
     3: new ol.style.Style({
         image: new ol.style.Icon(({
             crossOrigin: 'anonymous',
-            src: 'static/map/css/images/icons8-library-filled-50.png'
+            src: 'static/map/css/images/icons8-library-filled-50.png',
+            scale: 0.7
         }))
     }),
     4: new ol.style.Style({
         image: new ol.style.Icon(({
             crossOrigin: 'anonymous',
-            src: 'static/map/css/images/icons8-barbell-filled-50.png'
+            src: 'static/map/css/images/icons8-barbell-filled-50.png',
+            scale: 0.7
         }))
     })
 }
@@ -64,7 +75,9 @@ var ObjView = Marionette.View.extend({
     initialize: function () {
         this.listenTo(this.model, 'change', this.render);
         this.listenTo(this.model, 'destroy', this.remove);
-        this.point = ol.proj.fromLonLat(this.model.get('geom').coordinates.slice().reverse());
+        this.listenTo(this.model, 'add', this.render);
+        this.point = ol.proj.fromLonLat(this.model.get('geom').coordinates);
+        console.log(this.model.get('geom').coordinates + " || " + this.point);
         var marker = new ol.Feature({
             geometry: new ol.geom.Point(this.point)
         });
@@ -75,9 +88,8 @@ var ObjView = Marionette.View.extend({
             marker.setStyle(styles["1"]);
         }
 
-
         window.markersSource.addFeature(marker)
-
+        this.render()
     },
     events: {
         'click': 'flyToMarker'
@@ -94,6 +106,7 @@ var ObjView = Marionette.View.extend({
         );
         $(".collapse").hide();
         $("#card-" + this.model.get('id')).toggle();
+        $("#card-footer-" + this.model.get('id')).toggle();
     }
 });
 
@@ -116,6 +129,8 @@ var App = Marionette.Application.extend({
     region: '#inner-objects',
 
     onStart: function (app) {
+
+
         window.view = new ol.View({
             center: ol.proj.fromLonLat([39.710701, 47.240085]),
             zoom: 17
@@ -124,7 +139,7 @@ var App = Marionette.Application.extend({
             target: 'map',
             layers: [
                 new ol.layer.Tile({
-                    source: new ol.source.OSM()
+                    source: new ol.source.OSM({crossOrigin: 'anonymous'})
                 })
             ],
             view: window.view
@@ -151,6 +166,37 @@ var App = Marionette.Application.extend({
             }
         );
 
+
+        var newPointSource = new ol.source.Vector({});
+
+        var newPointLayer = new ol.layer.Vector({
+            source: newPointSource
+        });
+
+        window.map.addLayer(newPointLayer);
+
+        window.map.on("click", function (e) {
+            var latlon = ol.proj.transform(e.coordinate, 'EPSG:3857', 'EPSG:4326');
+            $("#add-point-lat").val(latlon[0]);
+            $("#add-point-lon").val(latlon[1]);
+            var newPoint = new ol.Feature({
+                geometry: new ol.geom.Point(ol.proj.fromLonLat(latlon))
+            });
+            newPoint.setStyle(new ol.style.Style({
+                image: new ol.style.Icon(({
+                    crossOrigin: 'anonymous',
+                    src: 'static/map/css/images/hospital.png',
+                    size: [128, 128],
+                    scale: 0.4,
+                    anchor: [0.5, 1]
+                }))
+            }));
+            console.log(newPoint);
+            newPointSource.clear();
+            newPointSource.addFeature(newPoint)
+        });
+
+
         var objlist = new ObjList();
         var objListView = new ObjListView({collection: objlist});
         app.showView(objListView);
@@ -167,12 +213,42 @@ var App = Marionette.Application.extend({
             objListView.setFilter(filter);
         });
 
-        $('#search-button').on("click", function () {
-            console.log("Click");
+        $("#element-form").submit(function (e) {
+            e.preventDefault();
+            var name = $("#add-name").val();
+            var description = $("#add-description").val();
+            var lat = parseFloat($("#add-point-lat").val());
+            var lon = parseFloat($("#add-point-lon").val());
+
+            objlist.create({
+                "name": name,
+                "description": description,
+                "type": 1,
+                "geom": {
+                    "type": "Point",
+                    "coordinates": [
+                        lat,
+                        lon
+                    ]
+                }
+            }, {"wait": true});
+
+            $("#add-name").val("");
+            $("#add-description").val("");
+            $("#add-point-lat").val("");
+            $("#add-point-lon").val("");
+            newPointSource.clear();
         });
+
+        $("#add-element").click(function () {
+            $("#add-element-card").slideToggle();
+        });
+
     }
 });
 
 var app = new App();
 
 app.start();
+
+
