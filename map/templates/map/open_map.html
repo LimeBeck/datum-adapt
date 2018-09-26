@@ -29,6 +29,32 @@
                 <input type="text" class="form-control" id="search-field" placeholder="Поиск">
             </div>
         </div>
+        <div class="card" style="width: 15rem;">
+            <div id="add-element" class="card-header">
+                Добавить элемент
+            </div>
+            <div id="add-element-card" class="card-body collapse">
+                <form id="element-form">
+                    <div>
+                        <label for="add-name">Имя</label><br>
+                        <input type="text" id="add-name" required>
+                    </div>
+                    <div>
+                        <label for="add-description">Описание</label>
+                        <input type="text" id="add-description" required>
+                    </div>
+                    <div>
+                        <label for="add-point-lat">Широта</label>
+                        <input type="text" id="add-point-lat" required>
+                        <label for="add-point-lon">Долгота</label>
+                        <input type="text" id="add-point-lon" required>
+                        <label>(Берутся из точки на карте)</label>
+                    </div>
+                    <br>
+                    <button id="add-button" type="submit">Добавить</button>
+                </form>
+            </div>
+        </div>
         <div id="inner-objects">
 
         </div>
@@ -37,7 +63,6 @@
 
 <!--Templates-->
 <script id="obj-list-template" type="x-template/underscore">
-
     <div id="obj-list">
     </div>
 </script>
@@ -45,10 +70,19 @@
 <script id="object-card-template" type="x-template/underscore">
     <div id="object-card" class="card" style="width: 15rem;">
         <div class="card-header">
-            <p><%= name %></p>
+            <%= name %>
         </div>
+
         <div id="card-<%= id %>" class="card-body collapse">
-            <p><%= description %></p>
+            <%= description %>
+        </div>
+        <div id="card-footer-<%= id %>" class="card-footer collapse">
+            <button class="btn btn-sm btn-outline-danger float-right">
+                Удалить
+            </button>
+            <button class="btn btn-sm btn-outline-primary float-left">
+                Изменить
+            </button>
         </div>
     </div>
 </script>

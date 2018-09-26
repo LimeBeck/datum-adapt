@@ -27,7 +27,8 @@ html, body {
     margin: 10px;
     font-size: small;
     z-index: 11111;
-    width: 93% !important;
+    max-width: 93% !important;
+    min-width: 93% !important;
 }
 
 #search {
