@@ -27,8 +27,35 @@ var Objects = Backbone.Model.extend({
 var ObjList = Backbone.Collection.extend({
     model: Objects,
     url: 'objects/'
-
 });
+
+var styles = {
+    1: new ol.style.Style({
+        image: new ol.style.Icon(({
+            crossOrigin: 'anonymous',
+            src: 'static/map/css/images/icons8-park-bench-filled-50.png',
+            size: [50, 50]
+        }))
+    }),
+    2: new ol.style.Style({
+        image: new ol.style.Icon(({
+            crossOrigin: 'anonymous',
+            src: 'static/map/css/images/icons8-monument-filled-50.png'
+        }))
+    }),
+    3: new ol.style.Style({
+        image: new ol.style.Icon(({
+            crossOrigin: 'anonymous',
+            src: 'static/map/css/images/icons8-library-filled-50.png'
+        }))
+    }),
+    4: new ol.style.Style({
+        image: new ol.style.Icon(({
+            crossOrigin: 'anonymous',
+            src: 'static/map/css/images/icons8-barbell-filled-50.png'
+        }))
+    })
+}
 
 
 var ObjView = Marionette.View.extend({
@@ -41,13 +68,13 @@ var ObjView = Marionette.View.extend({
         var marker = new ol.Feature({
             geometry: new ol.geom.Point(this.point)
         });
-        marker.setStyle(new ol.style.Style({
-            image: new ol.style.Icon(({
-                color: '#ffcd46',
-                crossOrigin: 'anonymous',
-                src: 'static/map/css/images/icons8-park-bench-filled-50.png'
-            }))
-        }));
+        if (0 < this.model.get('type') < 5) {
+            marker.setStyle(styles[this.model.get('type')]);
+        }
+        else {
+            marker.setStyle(styles["1"]);
+        }
+
 
         window.markersSource.addFeature(marker)
 
@@ -81,11 +108,12 @@ var ObjListView = Marionette.CollectionView.extend({
     initialize() {
         this.collection.fetch();
     },
-})
+    viewComparator: "type"
+});
 
 
 var App = Marionette.Application.extend({
-    region: '#objects',
+    region: '#inner-objects',
 
     onStart: function (app) {
         window.view = new ol.View({
@@ -102,8 +130,7 @@ var App = Marionette.Application.extend({
             view: window.view
         });
 
-        window.markersSource = new ol.source.Vector({
-        });
+        window.markersSource = new ol.source.Vector({});
 
         var markersLayer = new ol.layer.Vector({
             source: window.markersSource
@@ -115,10 +142,10 @@ var App = Marionette.Application.extend({
         window.map.on(
             'moveend', function () {
                 // console.log("Zoom:" + window.view.getZoom())
-                if(window.view.getZoom()<15){
+                if (window.view.getZoom() < 15) {
                     markersLayer.setVisible(false)
                 }
-                else{
+                else {
                     markersLayer.setVisible(true)
                 }
             }
@@ -127,9 +154,25 @@ var App = Marionette.Application.extend({
         var objlist = new ObjList();
         var objListView = new ObjListView({collection: objlist});
         app.showView(objListView);
+
+
+        $("#search-field").on("keyup", function () {
+            console.log('Change');
+            var filter = function (view, index, children) {
+                return view.model.get("name")
+                    .toLowerCase().indexOf(
+                        $("#search-field").val().toLowerCase()
+                    ) > -1
+            };
+            objListView.setFilter(filter);
+        });
+
+        $('#search-button').on("click", function () {
+            console.log("Click");
+        });
     }
 });
 
 var app = new App();
 
-app.start()
+app.start();
