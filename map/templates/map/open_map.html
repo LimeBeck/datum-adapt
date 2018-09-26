@@ -73,14 +73,14 @@
             <%= name %>
         </div>
 
-        <div id="card-<%= id %>" class="card-body collapse">
+        <div id="card" class="card-body collapse">
             <%= description %>
         </div>
-        <div id="card-footer-<%= id %>" class="card-footer collapse">
-            <button class="btn btn-sm btn-outline-danger float-right">
+        <div id="card-footer" class="card-footer collapse">
+            <button id="delete" class="btn btn-sm btn-outline-danger float-right">
                 Удалить
             </button>
-            <button class="btn btn-sm btn-outline-primary float-left">
+            <button id="change" class="btn btn-sm btn-outline-primary float-left">
                 Изменить
             </button>
         </div>
