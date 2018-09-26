@@ -27,4 +27,19 @@ html, body {
     margin: 10px;
     font-size: small;
     z-index: 11111;
+    width: 93% !important;
 }
+
+#search {
+     margin: 10px;
+}
+
+.search-icon{
+    background: url(images/search-solid.svg) no-repeat top left;
+    background-size: contain;
+    display: inline-block;
+    height: 19px;
+    width: 19px;
+    margin: auto;
+}
+
