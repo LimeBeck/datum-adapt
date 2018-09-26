@@ -16,6 +16,11 @@ var Types = Backbone.Model.extend({
     }
 });
 
+var TypesList = Backbone.Collection.extend({
+    model: Types,
+    url: 'types/'
+});
+
 // Objects Backbone model
 var Objects = Backbone.Model.extend({
     defaults: function () {
@@ -118,8 +123,8 @@ var ObjView = Marionette.View.extend({
             }
         );
         //Left opened only this card
-        $(".collapse").hide();
-        $(e.currentTarget).find(".collapse").toggle();
+        $(".collapse:visible").slideToggle();
+        $(e.currentTarget).find(".collapse").slideToggle();
     },
     deleteModel: function (e) {
         // Delete model and remove marker
@@ -149,7 +154,7 @@ var ObjListView = Marionette.CollectionView.extend({
 });
 
 // Root app
-// ToDo: make view to show in app, not render stuf into
+// ToDo: make view to show in app, not render stuff into
 var App = Marionette.Application.extend({
     region: '#inner-objects',
 
@@ -227,7 +232,7 @@ var App = Marionette.Application.extend({
         var objListView = new ObjListView({collection: objlist});
         app.showView(objListView);
 
-        // Other page stuf:
+        // Other page stuff:
         // Filter objects by name
         $("#search-field").on("keyup", function () {
             var filter = function (view, index, children) {
