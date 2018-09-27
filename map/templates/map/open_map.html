@@ -17,7 +17,9 @@
 </head>
 <body>
 <div id="container">
-    <div id="map" class="map"></div>
+    <div id="map" class="map">
+        <div id="popup"></div>
+    </div>
     <div id="objects">
         <div id="search">
             <div class="input-group mb-3">
@@ -29,32 +31,35 @@
                 <input type="text" class="form-control" id="search-field" placeholder="Поиск">
             </div>
         </div>
-        <div class="card" style="width: 15rem;">
-            <div id="add-element" class="card-header">
-                Добавить элемент
-            </div>
-            <div id="add-element-card" class="card-body collapse">
-                <form id="element-form">
-                    <div>
-                        <label for="add-name">Имя</label><br>
-                        <input type="text" id="add-name" required>
-                    </div>
-                    <div>
-                        <label for="add-description">Описание</label>
-                        <input type="text" id="add-description" required>
-                    </div>
-                    <div>
-                        <label for="add-point-lat">Широта</label>
-                        <input type="text" id="add-point-lat" required>
-                        <label for="add-point-lon">Долгота</label>
-                        <input type="text" id="add-point-lon" required>
-                        <label>(Берутся из точки на карте)</label>
-                    </div>
-                    <br>
-                    <button id="add-button" type="submit">Добавить</button>
-                </form>
-            </div>
+<div class="card" style="width: 15rem;">
+        <div id="add-element" class="card-header">
+            Добавить элемент
         </div>
+        <div id="add-element-card" class="card-body collapse">
+            <form id="element-form">
+                <div>
+                    <label for="add-name">Имя</label><br>
+                    <input type="text" id="add-name" required>
+                </div>
+                <div>
+                    <label for="add-description">Описание</label>
+                    <input type="text" id="add-description" required>
+                </div>
+                <div id="add-type">
+
+                </div>
+                <div>
+                    <label for="add-point-lat">Широта</label>
+                    <input type="text" id="add-point-lat" required>
+                    <label for="add-point-lon">Долгота</label>
+                    <input type="text" id="add-point-lon" required>
+                    <label>(Берутся из точки на карте)</label>
+                </div>
+                <br>
+                <button id="add-button" type="submit">Добавить</button>
+            </form>
+        </div>
+    </div>
         <div id="inner-objects">
 
         </div>
@@ -62,19 +67,70 @@
 </div>
 
 <!--Templates-->
+<script id="add-point-template" type="x-template/underscore">
+    <div class="card" style="width: 15rem;">
+        <div id="add-element" class="card-header">
+            Добавить элемент
+        </div>
+        <div id="add-element-card" class="card-body collapse">
+            <form id="element-form">
+                <div>
+                    <label for="add-name">Имя</label><br>
+                    <input type="text" id="add-name" required>
+                </div>
+                <div>
+                    <label for="add-description">Описание</label>
+                    <input type="text" id="add-description" required>
+                </div>
+                <div id="add-type">
+
+                </div>
+                <div>
+                    <label for="add-point-lat">Широта</label>
+                    <input type="text" id="add-point-lat" required>
+                    <label for="add-point-lon">Долгота</label>
+                    <input type="text" id="add-point-lon" required>
+                    <label>(Берутся из точки на карте)</label>
+                </div>
+                <br>
+                <button id="add-button" type="submit">Добавить</button>
+            </form>
+        </div>
+    </div>
+</script>
+
 <script id="obj-list-template" type="x-template/underscore">
     <div id="obj-list">
     </div>
+</script>
+
+<script id="type-template" type="x-template/underscore">
+    <div>
+        <span class="badge badge-info"> <%=name %> </span>
+    </div>
+</script>
+
+<script id="type-list-template" type="x-template/underscore">
+    <select id="type-list-container">
+    </select>
+</script>
+
+<script id="type-for-list-template" type="x-template/underscore">
+    <option value="<%= id %>"><%= name %></option>
 </script>
 
 <script id="object-card-template" type="x-template/underscore">
     <div id="object-card" class="card" style="width: 15rem;">
         <div class="card-header">
             <%= name %>
+            <div id="show-type-region" class="float-right">
+
+            </div>
         </div>
 
         <div id="card" class="card-body collapse">
-            <%= description %>
+            <p><%= description %></p>
+
         </div>
         <div id="card-footer" class="card-footer collapse">
             <button id="delete" class="btn btn-sm btn-outline-danger float-right">

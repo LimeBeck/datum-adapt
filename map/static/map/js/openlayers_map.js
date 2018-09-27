@@ -8,6 +8,7 @@ $(document).ajaxSend(function (event, request) {
 
 // Types Backbone model
 var Types = Backbone.Model.extend({
+    urlRoot: '/types',
     defaults: function () {
         return {
             name: "Default type name",
@@ -19,6 +20,28 @@ var Types = Backbone.Model.extend({
 var TypesList = Backbone.Collection.extend({
     model: Types,
     url: 'types/'
+});
+
+var TypesView = Marionette.View.extend({
+    template: _.template($("#type-template").html()),
+    initialize: function () {
+        this.listenTo(this.model, 'sync', this.render);
+    }
+});
+
+var TypesForListView = Marionette.View.extend({
+    template: _.template($("#type-for-list-template").html()),
+    initialize: function () {
+        this.listenTo(this.model, 'sync', this.render);
+    }
+});
+
+
+var TypesListView = Marionette.CollectionView.extend({
+    childView: TypesForListView,
+    childViewContainer: '#type-list-container',
+    template: _.template($('#type-list-template').html()),
+    region: "add-type"
 });
 
 // Objects Backbone model
@@ -82,6 +105,10 @@ var styles = {
 var ObjView = Marionette.View.extend({
     // Template get with jQuery, cos default underscore not working
     template: _.template($("#object-card-template").html()),
+    regions: {
+        showType: '#show-type-region'
+    },
+    childView: TypesView,
 
     initialize: function () {
         this.listenTo(this.model, 'change', this.render);
@@ -94,7 +121,9 @@ var ObjView = Marionette.View.extend({
 
         // Make marker at point
         this.marker = new ol.Feature({
-            geometry: new ol.geom.Point(this.point)
+            geometry: new ol.geom.Point(this.point),
+            name: this.model.get('name'),
+            description: this.model.get('description')
         });
 
         // Set style to marker
@@ -109,11 +138,23 @@ var ObjView = Marionette.View.extend({
         window.markersSource.addFeature(this.marker);
         this.render()
     },
+
+    onRender() {
+        // console.log('Show');
+        var type = new Types({'id': this.model.get('type')});
+        type.fetch();
+        var typeObj = new TypesView({model: type});
+        // console.log(typeObj);
+        var typeRegion = this.getRegion('showType');
+        typeRegion.show(typeObj)
+    },
+
     events: {
         'click': 'flyToMarker',
         'click #delete': 'deleteModel',
         'click #change': 'changeModel'
     },
+
     flyToMarker: function (e) {
         // Animate fly to marker
         window.view.animate({
@@ -123,14 +164,20 @@ var ObjView = Marionette.View.extend({
             }
         );
         //Left opened only this card
-        $(".collapse:visible").slideToggle();
-        $(e.currentTarget).find(".collapse").slideToggle();
+        if ($(e.currentTarget).find(':hidden').length > 0) {
+            $(".collapse:visible").slideToggle();
+            $(e.currentTarget).find(".collapse").slideToggle();
+        }
+
+
     },
+
     deleteModel: function (e) {
         // Delete model and remove marker
         this.model.destroy();
         window.markersSource.removeFeature(this.marker);
     },
+
     changeModel: function (e) {
         // ToDo: Make changing here
         console.log("Change");
@@ -152,6 +199,55 @@ var ObjListView = Marionette.CollectionView.extend({
     },
     viewComparator: "type"
 });
+
+
+var AddNewPointView = Marionette.View.extend({
+    template: _.template($('#add-point-template').html()),
+    region: '#add-element',
+    initialize() {
+
+    },
+    events: {
+        'submit #element-form': 'addPoint',
+        'click #add-element': 'toggleCard'
+    },
+    addPoint: function (e) {
+        e.preventDefault();
+        var name = $("#add-name").val();
+        var description = $("#add-description").val();
+        var lat = parseFloat($("#add-point-lat").val());
+        var lon = parseFloat($("#add-point-lon").val());
+
+        window.objlist.create({
+            "name": name,
+            "description": description,
+            "type": 1,
+            "geom": {
+                "type": "Point",
+                "coordinates": [
+                    lat,
+                    lon
+                ]
+            }
+        }, {"wait": true});
+
+        $("#add-name").val("");
+        $("#add-description").val("");
+        $("#add-point-lat").val("");
+        $("#add-point-lon").val("");
+        window.newPointSource.clear();
+    },
+    toggleCard: function () {
+        $("#add-element-card").slideToggle();
+    }
+
+});
+
+
+var MainView = Marionette.View.extend({
+
+});
+
 
 // Root app
 // ToDo: make view to show in app, not render stuff into
@@ -198,10 +294,10 @@ var App = Marionette.Application.extend({
         );
 
         // Make different layer for new point
-        var newPointSource = new ol.source.Vector({});
+        window.newPointSource = new ol.source.Vector({});
 
         var newPointLayer = new ol.layer.Vector({
-            source: newPointSource
+            source: window.newPointSource
         });
 
         window.map.addLayer(newPointLayer);
@@ -223,14 +319,16 @@ var App = Marionette.Application.extend({
                     anchor: [0.5, 1]
                 }))
             }));
-            newPointSource.clear();
-            newPointSource.addFeature(newPoint)
+            window.newPointSource.clear();
+            window.newPointSource.addFeature(newPoint)
         });
 
+
         // Get data from server
-        var objlist = new ObjList();
-        var objListView = new ObjListView({collection: objlist});
+        window.objlist = new ObjList();
+        var objListView = new ObjListView({collection: window.objlist});
         app.showView(objListView);
+
 
         // Other page stuff:
         // Filter objects by name
@@ -269,7 +367,7 @@ var App = Marionette.Application.extend({
             $("#add-description").val("");
             $("#add-point-lat").val("");
             $("#add-point-lon").val("");
-            newPointSource.clear();
+            window.newPointSource.clear();
         });
 
         // Toggle new object card

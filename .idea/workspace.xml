@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="952a3abe-afe8-4b06-88a4-52b5f15ee443" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/map/static/map/templates/templates.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/map/static/map/js/openlayers_map.js" beforeDir="false" afterPath="$PROJECT_DIR$/map/static/map/js/openlayers_map.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/map/templates/map/open_map.html" beforeDir="false" afterPath="$PROJECT_DIR$/map/templates/map/open_map.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,33 +60,35 @@
     <session id="2047057206">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.41" value="1" />
           <entry key="project.open.time.52" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="248" />
-          <entry key="html" value="1145" />
-          <entry key="js" value="3751" />
+          <entry key="html" value="1439" />
+          <entry key="js" value="5071" />
           <entry key="py" value="460" />
-          <entry key="txt" value="387" />
+          <entry key="txt" value="442" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="248" />
-          <entry key="HTML" value="1145" />
-          <entry key="JavaScript" value="3751" />
-          <entry key="PLAIN_TEXT" value="387" />
+          <entry key="HTML" value="1439" />
+          <entry key="JavaScript" value="5071" />
+          <entry key="PLAIN_TEXT" value="442" />
           <entry key="Python" value="460" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="4" />
-          <entry key="html" value="3" />
+          <entry key="html" value="4" />
           <entry key="js" value="5" />
           <entry key="map" value="1" />
           <entry key="png" value="2" />
@@ -96,7 +100,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="4" />
-          <entry key="HTML" value="3" />
+          <entry key="HTML" value="4" />
           <entry key="Image" value="2" />
           <entry key="JavaScript" value="5" />
           <entry key="PLAIN_TEXT" value="2" />
@@ -117,20 +121,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/map/static/map/js/openlayers_map.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="234" column="27" selection-start-line="234" selection-start-column="27" selection-end-line="234" selection-end-column="27" />
+            <state relative-caret-position="714">
+              <caret line="247" lean-forward="true" selection-start-line="247" selection-end-line="247" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/map/templates/map/open_map.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="78" column="28" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
+            <state relative-caret-position="-81">
+              <caret line="69" selection-start-line="69" selection-end-line="99" selection-end-column="9" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -142,7 +146,7 @@
         <entry file="file://$PROJECT_DIR$/map/static/map/css/open_map.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
-              <caret line="22" column="18" lean-forward="true" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+              <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -154,8 +158,8 @@
       <list>
         <option value="Python Script" />
         <option value="JavaScript File" />
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -163,6 +167,8 @@
     <findStrings>
       <find>sli</find>
       <find>conso</find>
+      <find>stu</find>
+      <find>fetc</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -203,6 +209,7 @@
         <option value="$PROJECT_DIR$/adapt/settings.py" />
         <option value="$PROJECT_DIR$/map/admin.py" />
         <option value="$PROJECT_DIR$/map/static/map/css/open_map.css" />
+        <option value="$PROJECT_DIR$/map/templates/map/templates.html" />
         <option value="$PROJECT_DIR$/map/templates/map/open_map.html" />
         <option value="$PROJECT_DIR$/map/static/map/js/openlayers_map.js" />
       </list>
@@ -321,6 +328,10 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/map/static/map/templates" />
+      <recent name="$PROJECT_DIR$/map/static/map" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/map/static/map/css/images" />
       <recent name="$PROJECT_DIR$/map/static/map/css" />
@@ -415,14 +426,21 @@
       <option name="project" value="LOCAL" />
       <updated>1537975155028</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add types collection, minor visual improvement">
+      <created>1537975821470</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1537975821470</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49944994" visible="true" weight="0.1485623" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49944994" visible="true" weight="0.15015975" />
       <window_info id="Structure" order="1" sideWeight="0.50055003" side_tool="true" weight="0.19037433" />
       <window_info id="Favorites" order="2" sideWeight="0.50055003" side_tool="true" weight="0.19037433" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -480,7 +498,8 @@
     <MESSAGE value="Add new point dialog, add coordinates from mouse position, make new admin panel" />
     <MESSAGE value="Change click events from single buttons to collection`s" />
     <MESSAGE value="Add comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add comments" />
+    <MESSAGE value="Add types collection, minor visual improvement" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add types collection, minor visual improvement" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/manage.py">
@@ -728,24 +747,31 @@
     <entry file="file://$PROJECT_DIR$/map/static/map/css/open_map.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
-          <caret line="22" column="18" lean-forward="true" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/map/templates/map/open_map.html">
+    <entry file="file://$PROJECT_DIR$/map/static/map/templates/templates.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="78" column="28" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="435">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/map/static/map/js/openlayers_map.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="234" column="27" selection-start-line="234" selection-start-column="27" selection-end-line="234" selection-end-column="27" />
+        <state relative-caret-position="714">
+          <caret line="247" lean-forward="true" selection-start-line="247" selection-end-line="247" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/templates/map/open_map.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-81">
+          <caret line="69" selection-start-line="69" selection-end-line="99" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
