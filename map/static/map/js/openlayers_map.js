@@ -25,14 +25,19 @@ var TypesList = Backbone.Collection.extend({
 var TypesView = Marionette.View.extend({
     template: _.template($("#type-template").html()),
     initialize: function () {
-        this.listenTo(this.model, 'sync', this.render);
+        this.listenTo(this.model, 'change', this.render);
+        this.listenTo(this.model, 'destroy', this.remove);
+        this.listenTo(this.model, 'add', this.render);
     }
 });
 
 var TypesForListView = Marionette.View.extend({
-    template: _.template($("#type-for-list-template").html()),
+    template: false,
+    tagName: 'option',
     initialize: function () {
-        this.listenTo(this.model, 'sync', this.render);
+        this.listenTo(this.model, 'change', this.render);
+        this.listenTo(this.model, 'destroy', this.remove);
+        this.listenTo(this.model, 'add', this.render);
     }
 });
 
@@ -41,7 +46,12 @@ var TypesListView = Marionette.CollectionView.extend({
     childView: TypesForListView,
     childViewContainer: '#type-list-container',
     template: _.template($('#type-list-template').html()),
-    region: "add-type"
+    collectionEvents: {
+        'sync': 'render'
+    },
+    initialize() {
+        this.collection.fetch();
+    }
 });
 
 // Objects Backbone model
@@ -188,7 +198,6 @@ var ObjView = Marionette.View.extend({
 //Objects Marionette collection view
 var ObjListView = Marionette.CollectionView.extend({
     childView: ObjView,
-
     childViewContainer: '#obj-list',
     template: _.template($('#obj-list-template').html()),
     collectionEvents: {
@@ -202,15 +211,26 @@ var ObjListView = Marionette.CollectionView.extend({
 
 
 var AddNewPointView = Marionette.View.extend({
-    template: _.template($('#add-point-template').html()),
-    region: '#add-element',
+    template: _.template($('#add-new-point-template').html()),
+    regions: {showType:'#add-type'},
     initialize() {
 
     },
     events: {
         'submit #element-form': 'addPoint',
-        'click #add-element': 'toggleCard'
+        'click #add-element.card-header': 'toggleCard'
     },
+
+    onRender(){
+        var types = new TypesList();
+        types.fetch();
+        this.typesView = new TypesListView({collection:types});
+        console.log(this.typesView);
+        var typeRegion = this.getRegion('showType');
+        typeRegion.show(this.typesView);
+        console.log(this.typeRegion);
+    },
+
     addPoint: function (e) {
         e.preventDefault();
         var name = $("#add-name").val();
@@ -243,20 +263,69 @@ var AddNewPointView = Marionette.View.extend({
 
 });
 
+var SearchView = Marionette.View.extend({
+    template: _.template($("#search-view-template").html()),
+    events: {
+        'keyup #search-field': 'filterData'
+    },
+    onRender(){
+        console.log("Render Search view");
+    },
+    filterData() {
+        // Filter objects by name
+        var filter = function (view, index, children) {
+            return view.model.get("name")
+                .toLowerCase().indexOf(
+                    $("#search-field").val().toLowerCase()
+                ) > -1
+        };
+        window.objListView.setFilter(filter);
+    }
+});
 
-var MainView = Marionette.View.extend({
-
+var InnerView = Marionette.View.extend({
+   template: _.template($("#inner-view-template").html()),
+   regions: {main: "#inner-objects"},
+   onRender(){
+       console.log("Render Inner view");
+       // Get data from server
+        window.objlist = new ObjList();
+        window.objListView = new ObjListView({collection: window.objlist});
+        var innerRegion = this.getRegion('main');
+        innerRegion.show(window.objListView);
+   }
 });
 
 
-// Root app
-// ToDo: make view to show in app, not render stuff into
-var App = Marionette.Application.extend({
-    region: '#inner-objects',
+var ObjectsView = Marionette.View.extend({
+    template: _.template($("#objects-view-template").html()),
+    regions: {
+        search: "#search-region",
+        addNewPoint: "#add-new-point-region",
+        inner: "#inner-region"
+    },
+    onRender() {
+        console.log("Render Objects view");
 
-    onStart: function (app) {
+        var searchRegion = this.getRegion('search');
+        searchRegion.show(new SearchView());
 
+        var addNewRegion = this.getRegion('addNewPoint');
+        addNewRegion.show(new AddNewPointView());
+
+        var innerRegion = this.getRegion('inner');
+        innerRegion.show(new InnerView());
+    }
+});
+
+
+var MapView = Marionette.View.extend({
+    template: _.template($("#map-view-template").html()),
+    className: "fullScreen",
+    addmap() {
         // Add map
+        console.log("Render MapView");
+
         window.view = new ol.View({
             center: ol.proj.fromLonLat([39.710701, 47.240085]),
             zoom: 17
@@ -270,7 +339,7 @@ var App = Marionette.Application.extend({
             ],
             view: window.view
         });
-
+        console.log(window.map);
         window.markersSource = new ol.source.Vector({});
 
         // Make layer with markers and add it to the map
@@ -322,59 +391,40 @@ var App = Marionette.Application.extend({
             window.newPointSource.clear();
             window.newPointSource.addFeature(newPoint)
         });
+    }
+});
 
 
-        // Get data from server
-        window.objlist = new ObjList();
-        var objListView = new ObjListView({collection: window.objlist});
-        app.showView(objListView);
+var MainView = Marionette.View.extend({
+    template: _.template($('#main-view-template').html()),
+    regions: {
+        map: "#map-region",
+        objects: "#objects-region"
+    },
+    className: "fullScreen",
+
+    onRender() {
+        console.log("Render main view");
+
+        var mapRegion = this.getRegion('map');
+        window.mapview = new MapView();
+        mapRegion.show(window.mapview);
+
+        var objectsRegion = this.getRegion('objects');
+        objectsRegion.show(new ObjectsView());
+    }
+});
 
 
-        // Other page stuff:
-        // Filter objects by name
-        $("#search-field").on("keyup", function () {
-            var filter = function (view, index, children) {
-                return view.model.get("name")
-                    .toLowerCase().indexOf(
-                        $("#search-field").val().toLowerCase()
-                    ) > -1
-            };
-            objListView.setFilter(filter);
-        });
+// Root app
+// ToDo: make view to show in app, not render stuff into
+var App = Marionette.Application.extend({
+    region: '#container',
 
-        // Add new object
-        $("#element-form").submit(function (e) {
-            e.preventDefault();
-            var name = $("#add-name").val();
-            var description = $("#add-description").val();
-            var lat = parseFloat($("#add-point-lat").val());
-            var lon = parseFloat($("#add-point-lon").val());
+    onStart: function (app) {
 
-            objlist.create({
-                "name": name,
-                "description": description,
-                "type": 1,
-                "geom": {
-                    "type": "Point",
-                    "coordinates": [
-                        lat,
-                        lon
-                    ]
-                }
-            }, {"wait": true});
-
-            $("#add-name").val("");
-            $("#add-description").val("");
-            $("#add-point-lat").val("");
-            $("#add-point-lon").val("");
-            window.newPointSource.clear();
-        });
-
-        // Toggle new object card
-        $("#add-element").click(function () {
-            $("#add-element-card").slideToggle();
-        });
-
+        app.showView(new MainView());
+        window.mapview.addmap();
     }
 });
 

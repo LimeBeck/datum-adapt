@@ -17,57 +17,42 @@
 </head>
 <body>
 <div id="container">
-    <div id="map" class="map">
-        <div id="popup"></div>
-    </div>
-    <div id="objects">
-        <div id="search">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <span class="search-icon "></span>
-                    </div>
-                </div>
-                <input type="text" class="form-control" id="search-field" placeholder="Поиск">
-            </div>
-        </div>
-<div class="card" style="width: 15rem;">
-        <div id="add-element" class="card-header">
-            Добавить элемент
-        </div>
-        <div id="add-element-card" class="card-body collapse">
-            <form id="element-form">
-                <div>
-                    <label for="add-name">Имя</label><br>
-                    <input type="text" id="add-name" required>
-                </div>
-                <div>
-                    <label for="add-description">Описание</label>
-                    <input type="text" id="add-description" required>
-                </div>
-                <div id="add-type">
 
-                </div>
-                <div>
-                    <label for="add-point-lat">Широта</label>
-                    <input type="text" id="add-point-lat" required>
-                    <label for="add-point-lon">Долгота</label>
-                    <input type="text" id="add-point-lon" required>
-                    <label>(Берутся из точки на карте)</label>
-                </div>
-                <br>
-                <button id="add-button" type="submit">Добавить</button>
-            </form>
-        </div>
-    </div>
-        <div id="inner-objects">
-
-        </div>
-    </div>
 </div>
 
 <!--Templates-->
-<script id="add-point-template" type="x-template/underscore">
+<script id="main-view-template" type="x-template/underscore">
+    <div id="map-region" class="fullScreen">
+    </div>
+    <div id="objects-region"></div>
+</script>
+
+<script id="map-view-template" type="x-template/underscore">
+    <div id="map" class="map">
+        <div id="popup"></div>
+    </div>
+</script>
+
+<script id="objects-view-template" type="x-template/underscore">
+    <div id="search-region"></div>
+    <div id="add-new-point-region"></div>
+    <div id="inner-region"></div>
+</script>
+
+<script id="search-view-template" type="x-template/underscore">
+    <div id="search">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <div class="input-group-text">
+                    <span class="search-icon "></span>
+                </div>
+            </div>
+            <input type="text" class="form-control" id="search-field" placeholder="Поиск">
+        </div>
+    </div>
+</script>
+
+<script id="add-new-point-template" type="x-template/underscore">
     <div class="card" style="width: 15rem;">
         <div id="add-element" class="card-header">
             Добавить элемент
@@ -97,6 +82,44 @@
             </form>
         </div>
     </div>
+</script>
+
+
+<script id="change-point-template" type="x-template/underscore">
+    <div class="card" style="width: 15rem;">
+        <div class="card-header">
+            Изменить элемент
+        </div>
+        <div class="card-body">
+            <form id="change-form">
+                <div>
+                    <label for="change-name">Имя</label><br>
+                    <input type="text" id="change-name" required>
+                </div>
+                <div>
+                    <label for="change-description">Описание</label>
+                    <input type="text" id="change-description" required>
+                </div>
+                <div id="change-type">
+
+                </div>
+                <div>
+                    <label for="change-point-lat">Широта</label>
+                    <input type="text" id="change-point-lat" required>
+                    <label for="change-point-lon">Долгота</label>
+                    <input type="text" id="change-point-lon" required>
+                    <label>(Берутся из точки на карте)</label>
+                </div>
+                <br>
+                <button id="change-button" type="submit">Изменить</button>
+            </form>
+        </div>
+    </div>
+</script>
+
+
+<script id="inner-view-template" type="x-template/underscore">
+    <div id="inner-objects"></div>
 </script>
 
 <script id="obj-list-template" type="x-template/underscore">
