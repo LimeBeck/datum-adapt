@@ -1,0 +1,29 @@
+<script id="obj-list-template" type="x-template/underscore">
+    <div id="obj-list">
+    </div>
+</script>
+
+<script id="object-card-template" type="x-template/underscore">
+    <div id="object-card" class="card" style="width: 15rem;">
+        <div class="card-header">
+            <%= name %>
+        </div>
+
+        <div id="card" class="card-body collapse">
+            <%= description %>
+        </div>
+        <div id="card-footer" class="card-footer collapse">
+            <button id="delete" class="btn btn-sm btn-outline-danger float-right">
+                Удалить
+            </button>
+            <button id="change" class="btn btn-sm btn-outline-primary float-left">
+                Изменить
+            </button>
+        </div>
+    </div>
+</script>
+
+<script id="popup-text-template" type="x-template/underscore">
+    <p style="font-weight:900"><%= name %></p>
+    <p><%= description %></p>
+</script>
