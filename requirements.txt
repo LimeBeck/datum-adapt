@@ -2,3 +2,4 @@ django
 djangorestframework
 django-rest-swagger
 djangorestframework-gis
+psycopg2
