@@ -29,7 +29,6 @@ Backbone.sync = function (method, model, options) {
 
 // Types Backbone model
 var Types = Backbone.Model.extend({
-    selected: false,
     urlRoot: '/types',
     defaults: function () {
         return {
@@ -553,7 +552,7 @@ var MapView = Marionette.View.extend({
                 }))
             }));
             window.newPointSource.clear();
-            window.newPointSource.addFeature(newPoint),
+            window.newPointSource.addFeature(newPoint);
         });
     }
 });
