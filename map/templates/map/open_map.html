@@ -35,6 +35,7 @@
 
 <script id="objects-view-template" type="x-template/underscore">
     <div id="search-region"></div>
+    <div id="types-filter-region"></div>
     <div id="add-new-point-region"></div>
     <div id="inner-region"></div>
 </script>
@@ -59,26 +60,26 @@
         </div>
         <div id="add-element-card" class="card-body collapse">
             <form id="element-form">
-                <div>
+                <div class="form-group">
                     <label for="add-name">Имя</label><br>
-                    <input type="text" id="add-name" required>
+                    <input class="form-control" type="text" id="add-name" required>
                 </div>
-                <div>
+                <div class="form-group">
                     <label for="add-description">Описание</label>
-                    <input type="text" id="add-description" required>
+                    <input class="form-control" type="text" id="add-description" required>
                 </div>
-                <div id="add-type">
+                <div id="add-type" class="form-group">
 
                 </div>
-                <div>
+                <div class="form-group">
                     <label for="add-point-lat">Широта</label>
-                    <input type="text" id="add-point-lat" required>
+                    <input class="form-control" type="text" id="add-point-lat" required>
                     <label for="add-point-lon">Долгота</label>
-                    <input type="text" id="add-point-lon" required>
+                    <input class="form-control" type="text" id="add-point-lon" required>
                     <label>(Берутся из точки на карте)</label>
                 </div>
                 <br>
-                <button id="add-button" type="submit">Добавить</button>
+                <button class="btn btn-success" id="add-button" type="submit">Добавить</button>
             </form>
         </div>
     </div>
@@ -94,24 +95,25 @@
             <form id="change-form">
                 <div>
                     <label for="change-name">Имя</label><br>
-                    <input type="text" id="change-name" required>
+                    <input class="form-control" type="text" id="change-name" required value="<%= name %>">
                 </div>
                 <div>
                     <label for="change-description">Описание</label>
-                    <input type="text" id="change-description" required>
+                    <input class="form-control" type="text" id="change-description" required value="<%= description %>">
                 </div>
-                <div id="change-type">
+                <div id="show-type-region">
 
                 </div>
                 <div>
                     <label for="change-point-lat">Широта</label>
-                    <input type="text" id="change-point-lat" required>
+                    <input class="form-control" type="text" id="change-point-lat" required value="<%= geom.coordinates[0] %>">
                     <label for="change-point-lon">Долгота</label>
-                    <input type="text" id="change-point-lon" required>
+                    <input class="form-control" type="text" id="change-point-lon" required value="<%= geom.coordinates[1] %>">
                     <label>(Берутся из точки на карте)</label>
                 </div>
                 <br>
-                <button id="change-button" type="submit">Изменить</button>
+                <button class="btn btn-sm btn-outline-success float-left" id="change-button" type="submit">Сохранить</button>
+                <button class="btn btn-sm btn-outline-primary float-right" id="cancel-button">Отмена</button>
             </form>
         </div>
     </div>
@@ -128,14 +130,19 @@
 </script>
 
 <script id="type-template" type="x-template/underscore">
-    <div>
         <span class="badge badge-info"> <%=name %> </span>
-    </div>
+</script>
+
+<script id="cliked-type-template" type="x-template/underscore">
+        <span class="badge badge-dark"> <%=name %> </span>
 </script>
 
 <script id="type-list-template" type="x-template/underscore">
-    <select id="type-list-container">
-    </select>
+    <div>
+        <label for="type-list-container">Тип</label>
+        <select id="type-list-container" class="custom-select">
+        </select>
+    </div>
 </script>
 
 <script id="type-for-list-template" type="x-template/underscore">
