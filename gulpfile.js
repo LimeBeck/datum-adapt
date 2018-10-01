@@ -42,7 +42,7 @@ gulp.task('browsersync', function () {
 });
 
 gulp.task('watch', function(){
-    gulp.watch('map/static/map/sass/**/*.scss', ['styles']);
+    gulp.watch('map/static/map/sass/**/*.scss', gulp.series('styles'));
     gulp.watch('**/*.{scss,css,html,py,js}').on('change', reload);
 });
 
