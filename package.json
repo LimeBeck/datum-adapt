@@ -1,0 +1,34 @@
+{
+  "name": "datum-adapt-gulp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LimeBeck/datum-adapt.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LimeBeck/datum-adapt/issues"
+  },
+  "homepage": "https://github.com/LimeBeck/datum-adapt#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.1.5",
+    "browsersync": "0.0.1-security",
+    "gulp": "^4.0.0",
+    "gulp-cli": "^2.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-debug": "^4.0.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "postcss-cli": "^6.0.0"
+  },
+  "dependencies": {
+    "browser-sync": "^2.24.7"
+  }
+}

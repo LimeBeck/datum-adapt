@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="static/map/css/ol.css"/>
-    <link rel="stylesheet" type="text/css" href="static/map/css/open_map.css"/>
     <link rel="stylesheet" type="text/css" href="static/map/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="static/map/css/main.css"/>
     <script src="static/map/lib/underscore.js"></script>
     <script src="static/map/lib/jquery.js"></script>
     <script src="static/map/lib/backbone.js"></script>
@@ -16,7 +16,7 @@
     <title>Map</title>
 </head>
 <body>
-<div id="container">
+<div id="container" class="fullScreen">
 
 </div>
 
@@ -28,7 +28,7 @@
 </script>
 
 <script id="map-view-template" type="x-template/underscore">
-    <div id="map" class="map">
+    <div id="map" class="map fullScreen">
         <div id="popup"></div>
     </div>
 </script>
@@ -134,7 +134,7 @@
 </script>
 
 <script id="cliked-type-template" type="x-template/underscore">
-        <span class="badge badge-dark"> <%=name %> </span>
+        <span class="badge badge-light"> <%=name %> </span>
 </script>
 
 <script id="type-list-template" type="x-template/underscore">

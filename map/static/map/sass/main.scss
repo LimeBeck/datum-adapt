@@ -1,16 +1,14 @@
 html, body {
-    height: 100%;
+  height: 100%;
     width: 100%;
     margin: 0;
     overflow: hidden;
 }
 
-
 .fullScreen{
     width: 100%;
     height: 100%;
 }
-
 
 #objects-region {
     position: absolute;
@@ -20,8 +18,14 @@ html, body {
     overflow: auto;
 }
 
+%margin-default {
+  margin: 10px;
+}
+
+
 .card {
-    margin: 10px;
+  @extend %margin-default;
+
     font-size: small;
     z-index: 11111;
     max-width: 93% !important;
@@ -29,7 +33,7 @@ html, body {
 }
 
 #search {
-     margin: 10px;
+     @extend %margin-default;
 }
 
 .search-icon{
