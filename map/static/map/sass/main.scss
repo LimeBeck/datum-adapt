@@ -1,35 +1,54 @@
-@charset 'UTF-8';
+html, body {
+  height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+}
 
-// 1. Configuration and helpers
-@import
-  'abstracts/variables',
-  'abstracts/functions',
-  'abstracts/mixins';
+.fullScreen{
+    width: 100%;
+    height: 100%;
+}
 
-// 2. Vendors
-@import
-  'vendor/normalize';
+#objects-region {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    max-height: 100%;
+    overflow: auto;
+}
 
-// 3. Base stuff
-@import
-  'base/base',
-  'base/fonts',
-  'base/typography',
-  'base/helpers';
+%margin-default {
+  margin: 10px;
+}
 
-// 4. Layout-related sections
-@import
-  'layout/header',
-  'layout/footer';
 
-// 5. Components
-@import
-  'components/button';
+.card {
+  @extend %margin-default;
 
-// 6. Page-specific styles
-@import
-  'pages/home';
+    font-size: small;
+    z-index: 11111;
+    max-width: 93% !important;
+    min-width: 93% !important;
+}
 
-// 7. Themes
-@import
-  'themes/default';
+#search {
+     @extend %margin-default;
+}
+
+.search-icon{
+    background: url(images/search-solid.svg) no-repeat top left;
+    background-size: contain;
+    display: inline-block;
+    height: 19px;
+    width: 19px;
+    margin: auto;
+}
+
+.type-filter{
+    margin: 0 5px;
+}
+
+#types-filter-region{
+    padding: 0 7px;
+}
