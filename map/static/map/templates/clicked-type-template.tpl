@@ -1,0 +1,1 @@
+<span class="badge badge-light"> <%=name %> </span>

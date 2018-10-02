@@ -588,7 +588,6 @@ var MainView = Marionette.View.extend({
 
 
 // Root app
-// ToDo: make view to show in app, not render stuff into
 var App = Marionette.Application.extend({
     region: '#container',
 

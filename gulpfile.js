@@ -5,6 +5,8 @@ var concat = require('gulp-concat');
 var autoprefixer = require('autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
 var postcss = require('gulp-postcss');
+var csso = require('gulp-csso');
+var htmlmin = require('gulp-htmlmin');
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
 
@@ -26,9 +28,21 @@ gulp.task('styles', function () {
         .pipe(postcss([autoprefixer()]))
         .pipe(sourcemaps.write('.'))
         .pipe(debug())
+        .pipe(csso())
         .pipe(gulp.dest('map/static/map/css'));
 
 });
+
+gulp.task('minify', function() {
+    return gulp.src('map/**/*.{html, tpl}')
+    .pipe(debug())  
+    .pipe(htmlmin({
+            collapseWhitespace: true,
+            removeComments: true
+          }))
+    .pipe(debug())
+    .pipe(gulp.dest('map/dist/'))
+}
 
 // Initiate browsersync and point it at localhost:8000
 gulp.task('browsersync', function () {
