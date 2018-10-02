@@ -2,46 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="952a3abe-afe8-4b06-88a4-52b5f15ee443" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/map/static/map/js/collections/objList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/js/collections/typesList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/js/modelViews/objListView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/js/modelViews/objView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/js/modelViews/typesForListView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/js/modelViews/typesListView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/js/modelViews/typesView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/js/models/objects.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/js/models/types.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/js/utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/js/views/addNewPointView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/js/views/innerView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/js/views/mainView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/js/views/mapView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/js/views/objectsView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/js/views/searchView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/js/views/typesFilterView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/templates.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/templates/add-new-point-template.tpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/templates/change-point-template.tpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/templates/clicked-type-template.tpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/templates/inner-view-template.tpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/templates/main-view-template.tpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/templates/map-view-template.tpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/templates/obj-list-template.tpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/templates/object-card-template.tpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/templates/objects-view-template.tpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/templates/search-view-template.tpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/templates/type-list-template.tpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/templates/type-template.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/map/static/map/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/map/static/map/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/map/static/map/js/lib/ol.js" beforeDir="false" afterPath="$PROJECT_DIR$/map/static/map/js/lib/ol.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/map/static/map/js/openlayers_map.js" beforeDir="false" afterPath="$PROJECT_DIR$/map/static/map/js/openlayers_map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/map/static/map/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/map/static/map/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/map/static/map/templates/templates.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/map/templates/map/map.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/map/static/map/templates.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/map/templates/map/open_map.html" beforeDir="false" afterPath="$PROJECT_DIR$/map/templates/map/open_map.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/map/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/map/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/map/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/map/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
@@ -166,8 +130,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="3" />
-          <entry key="html" value="6" />
+          <entry key="css" value="5" />
+          <entry key="html" value="9" />
           <entry key="js" value="92" />
           <entry key="md" value="2" />
           <entry key="py" value="7" />
@@ -177,8 +141,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="3" />
-          <entry key="HTML" value="21" />
+          <entry key="CSS" value="5" />
+          <entry key="HTML" value="24" />
           <entry key="JavaScript" value="90" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="2" />
@@ -190,20 +154,20 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="41" />
-          <entry key="html" value="188" />
+          <entry key="html" value="195" />
           <entry key="js" value="4780" />
           <entry key="py" value="28" />
           <entry key="scss" value="141" />
           <entry key="tpl" value="6" />
-          <entry key="txt" value="58" />
+          <entry key="txt" value="125" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="41" />
-          <entry key="HTML" value="194" />
+          <entry key="HTML" value="201" />
           <entry key="JavaScript" value="4780" />
-          <entry key="PLAIN_TEXT" value="58" />
+          <entry key="PLAIN_TEXT" value="125" />
           <entry key="Python" value="28" />
           <entry key="SCSS" value="141" />
         </counts>
@@ -214,17 +178,7 @@
     <favorites_list name="adapt" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/map/templates/map/open_map.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -421,6 +375,23 @@
               <item name="map" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="map" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="datum-adapt-gulp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="datum-adapt-gulp" type="462c0819:PsiDirectoryNode" />
+              <item name="map" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="map" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="style.css" type="620a8d5e:NestingTreeNode" />
+            </path>
+            <path>
+              <item name="datum-adapt-gulp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="datum-adapt-gulp" type="462c0819:PsiDirectoryNode" />
+              <item name="map" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="map" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -474,10 +445,11 @@
     <property name="SearchEverywhereHistoryKey" value="/map/static/map/js&#9;FILE&#9;uml://JavaScript-modules-diagram//home/develop/PycharmProjects/datum-adapt-gulp/map/static/map/js/openlayers_map.js" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/node_modules/gulp" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/map/static/map/css/style (копия).css" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/map/static/map/css/style (копия).css" />
     <property name="two.files.diff.last.used.folder" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
@@ -673,12 +645,18 @@
       <option name="project" value="LOCAL" />
       <updated>1538405787251</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Break by single modules with requirejs, add templates to underscore">
+      <created>1538485599527</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1538485599527</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1050" extended-state="7" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1920" height="1050" extended-state="6" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49944994" visible="true" weight="0.18849841" />
       <window_info id="Structure" order="1" sideWeight="0.50055003" side_tool="true" weight="0.19037433" />
@@ -744,30 +722,10 @@
     <MESSAGE value="Remake interface with marionette views, try to output types in new point card" />
     <MESSAGE value="Add changing objects" />
     <MESSAGE value="Not working sync stuff, just for sync with note" />
-    <option name="LAST_COMMIT_MESSAGE" value="Not working sync stuff, just for sync with note" />
+    <MESSAGE value="Break by single modules with requirejs, add templates to underscore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Break by single modules with requirejs, add templates to underscore" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/map/static/map/css/open_map.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" selection-start-line="22" selection-end-line="49" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/static/map/require.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adapt/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="75" column="52" selection-start-line="75" selection-start-column="52" selection-end-line="75" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://JavaScript-modules-diagram//home/develop/PycharmProjects/datum-adapt-gulp/map/static/map/js/openlayers_map.js">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -914,13 +872,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="36" lean-forward="true" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/static/map/templates.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2340">
-          <caret line="156" column="9" selection-start-line="156" selection-start-column="9" selection-end-line="156" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -1111,10 +1062,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/map/static/map/templates.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1104">
+          <caret line="156" column="9" selection-start-line="156" selection-start-column="9" selection-end-line="156" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/dist/templates/map/open_map.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/dist/templates/map/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/static/map/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-282200">
+          <folding>
+            <element signature="e#247078#247278#2" expanded="true" />
+            <element signature="e#247512#247661#2" expanded="true" />
+            <element signature="e#248234#248380#2" expanded="true" />
+            <element signature="e#248754#248920#1" expanded="true" />
+            <element signature="e#262529#262772#2" expanded="true" />
+            <element signature="e#263808#264057#2" expanded="true" />
+            <element signature="e#297014#297204#2" expanded="true" />
+            <element signature="e#297261#297451#2" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/map/templates/map/open_map.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="150">
+          <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
         </state>
       </provider>
     </entry>

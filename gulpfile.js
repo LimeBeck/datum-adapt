@@ -6,6 +6,7 @@ var autoprefixer = require('autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
 var postcss = require('gulp-postcss');
 var csso = require('gulp-csso');
+var cleanCSS = require ('gulp-clean-css') ; 
 var htmlmin = require('gulp-htmlmin');
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
@@ -20,7 +21,7 @@ gulp.task('django', function () {
 });
 
 // Take
-gulp.task('styles', function () {
+gulp.task('sass-styles', function () {
     return gulp.src('map/static/map/sass/main.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(debug())
@@ -28,7 +29,19 @@ gulp.task('styles', function () {
         .pipe(postcss([autoprefixer()]))
         .pipe(sourcemaps.write('.'))
         .pipe(debug())
-        .pipe(csso())
+        .pipe(cleanCSS())
+        .pipe(gulp.dest('map/static/map/css'));
+
+});
+
+gulp.task('styles', function () {
+    return gulp.src('map/static/map/css/*.css')
+        .pipe(debug())
+        .pipe(sourcemaps.init())
+        .pipe(postcss([autoprefixer()]))
+        .pipe(concat('style.css'))
+        .pipe(debug())
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('map/static/map/css'));
 
 });
@@ -42,7 +55,7 @@ gulp.task('minify', function() {
           }))
     .pipe(debug())
     .pipe(gulp.dest('map/dist/'))
-}
+})
 
 // Initiate browsersync and point it at localhost:8000
 gulp.task('browsersync', function () {
