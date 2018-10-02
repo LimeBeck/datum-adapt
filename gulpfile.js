@@ -5,6 +5,9 @@ var concat = require('gulp-concat');
 var autoprefixer = require('autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
 var postcss = require('gulp-postcss');
+var csso = require('gulp-csso');
+var cleanCSS = require ('gulp-clean-css') ; 
+var htmlmin = require('gulp-htmlmin');
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
 
@@ -18,7 +21,7 @@ gulp.task('django', function () {
 });
 
 // Take
-gulp.task('styles', function () {
+gulp.task('sass-styles', function () {
     return gulp.src('map/static/map/sass/main.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(debug())
@@ -26,9 +29,33 @@ gulp.task('styles', function () {
         .pipe(postcss([autoprefixer()]))
         .pipe(sourcemaps.write('.'))
         .pipe(debug())
+        .pipe(cleanCSS())
         .pipe(gulp.dest('map/static/map/css'));
 
 });
+
+gulp.task('styles', function () {
+    return gulp.src('map/static/map/css/*.css')
+        .pipe(debug())
+        .pipe(sourcemaps.init())
+        .pipe(postcss([autoprefixer()]))
+        .pipe(concat('style.css'))
+        .pipe(debug())
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('map/static/map/css'));
+
+});
+
+gulp.task('minify', function() {
+    return gulp.src('map/**/*.{html, tpl}')
+    .pipe(debug())  
+    .pipe(htmlmin({
+            collapseWhitespace: true,
+            removeComments: true
+          }))
+    .pipe(debug())
+    .pipe(gulp.dest('map/dist/'))
+})
 
 // Initiate browsersync and point it at localhost:8000
 gulp.task('browsersync', function () {
@@ -42,7 +69,7 @@ gulp.task('browsersync', function () {
 });
 
 gulp.task('watch', function(){
-    gulp.watch('map/static/map/sass/**/*.scss', ['styles']);
+    gulp.watch('map/static/map/sass/**/*.scss', gulp.series('styles'));
     gulp.watch('**/*.{scss,css,html,py,js}').on('change', reload);
 });
 

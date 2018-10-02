@@ -10,10 +10,6 @@ def index(request):
     return render(request, "map/index.html")
 
 
-def map_view(request):
-    return render(request, "map/map.html")
-
-
 def open_map_view(request):
     return render(request, "map/open_map.html")
 

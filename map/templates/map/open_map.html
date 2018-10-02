@@ -2,17 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="static/map/css/ol.css"/>
+    <!--<link rel="stylesheet" type="text/css" href="static/map/css/ol.css"/>
     <link rel="stylesheet" type="text/css" href="static/map/css/bootstrap.css"/>
     <link rel="stylesheet" type="text/css" href="static/map/css/main.css"/>
-    <script src="static/map/lib/underscore.js"></script>
-    <script src="static/map/lib/jquery.js"></script>
-    <script src="static/map/lib/backbone.js"></script>
-    <script src="static/map/lib/backbone.radio.js"></script>
-    <script src="static/map/lib/backbone.marionette.js"></script>
-    <script src="static/map/lib/bootstrap.bundle.js"></script>
-    <script src="static/map/lib/ol.js"></script>
-
+-->
+    <link rel="stylesheet" type="text/css" href="static/map/css/style.css"/>
     <title>Map</title>
 </head>
 <body>
@@ -21,165 +15,15 @@
 </div>
 
 <!--Templates-->
-<script id="main-view-template" type="x-template/underscore">
-    <div id="map-region" class="fullScreen">
-    </div>
-    <div id="objects-region"></div>
-</script>
-
-<script id="map-view-template" type="x-template/underscore">
-    <div id="map" class="map fullScreen">
-        <div id="popup"></div>
-    </div>
-</script>
-
-<script id="objects-view-template" type="x-template/underscore">
-    <div id="search-region"></div>
-    <div id="types-filter-region"></div>
-    <div id="add-new-point-region"></div>
-    <div id="inner-region"></div>
-</script>
-
-<script id="search-view-template" type="x-template/underscore">
-    <div id="search">
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <div class="input-group-text">
-                    <span class="search-icon "></span>
-                </div>
-            </div>
-            <input type="text" class="form-control" id="search-field" placeholder="Поиск">
-        </div>
-    </div>
-</script>
-
-<script id="add-new-point-template" type="x-template/underscore">
-    <div class="card" style="width: 15rem;">
-        <div id="add-element" class="card-header">
-            Добавить элемент
-        </div>
-        <div id="add-element-card" class="card-body collapse">
-            <form id="element-form">
-                <div class="form-group">
-                    <label for="add-name">Имя</label><br>
-                    <input class="form-control" type="text" id="add-name" required>
-                </div>
-                <div class="form-group">
-                    <label for="add-description">Описание</label>
-                    <input class="form-control" type="text" id="add-description" required>
-                </div>
-                <div id="add-type" class="form-group">
-
-                </div>
-                <div class="form-group">
-                    <label for="add-point-lat">Широта</label>
-                    <input class="form-control" type="text" id="add-point-lat" required>
-                    <label for="add-point-lon">Долгота</label>
-                    <input class="form-control" type="text" id="add-point-lon" required>
-                    <label>(Берутся из точки на карте)</label>
-                </div>
-                <br>
-                <button class="btn btn-success" id="add-button" type="submit">Добавить</button>
-            </form>
-        </div>
-    </div>
-</script>
-
-
-<script id="change-point-template" type="x-template/underscore">
-    <div class="card" style="width: 15rem;">
-        <div class="card-header">
-            Изменить элемент
-        </div>
-        <div class="card-body">
-            <form id="change-form">
-                <div>
-                    <label for="change-name">Имя</label><br>
-                    <input class="form-control" type="text" id="change-name" required value="<%= name %>">
-                </div>
-                <div>
-                    <label for="change-description">Описание</label>
-                    <input class="form-control" type="text" id="change-description" required value="<%= description %>">
-                </div>
-                <div id="show-type-region">
-
-                </div>
-                <div>
-                    <label for="change-point-lat">Широта</label>
-                    <input class="form-control" type="text" id="change-point-lat" required value="<%= geom.coordinates[0] %>">
-                    <label for="change-point-lon">Долгота</label>
-                    <input class="form-control" type="text" id="change-point-lon" required value="<%= geom.coordinates[1] %>">
-                    <label>(Берутся из точки на карте)</label>
-                </div>
-                <br>
-                <button class="btn btn-sm btn-outline-success float-left" id="change-button" type="submit">Сохранить</button>
-                <button class="btn btn-sm btn-outline-primary float-right" id="cancel-button">Отмена</button>
-            </form>
-        </div>
-    </div>
-</script>
-
-
-<script id="inner-view-template" type="x-template/underscore">
-    <div id="inner-objects"></div>
-</script>
-
-<script id="obj-list-template" type="x-template/underscore">
-    <div id="obj-list">
-    </div>
-</script>
-
-<script id="type-template" type="x-template/underscore">
-        <span class="badge badge-info"> <%=name %> </span>
-</script>
-
-<script id="cliked-type-template" type="x-template/underscore">
-        <span class="badge badge-light"> <%=name %> </span>
-</script>
-
-<script id="type-list-template" type="x-template/underscore">
-    <div>
-        <label for="type-list-container">Тип</label>
-        <select id="type-list-container" class="custom-select">
-        </select>
-    </div>
-</script>
-
-<script id="type-for-list-template" type="x-template/underscore">
-    <option value="<%= id %>"><%= name %></option>
-</script>
-
-<script id="object-card-template" type="x-template/underscore">
-    <div id="object-card" class="card" style="width: 15rem;">
-        <div class="card-header">
-            <%= name %>
-            <div id="show-type-region" class="float-right">
-
-            </div>
-        </div>
-
-        <div id="card" class="card-body collapse">
-            <p><%= description %></p>
-
-        </div>
-        <div id="card-footer" class="card-footer collapse">
-            <button id="delete" class="btn btn-sm btn-outline-danger float-right">
-                Удалить
-            </button>
-            <button id="change" class="btn btn-sm btn-outline-primary float-left">
-                Изменить
-            </button>
-        </div>
-    </div>
-</script>
-
 <script id="popup-text-template" type="x-template/underscore">
     <p style="font-weight:900"><%= name %></p>
     <p><%= description %></p>
 </script>
-
-<!--Script-->
+<!--Script
 <script src="static/map/js/openlayers_map.js"></script>
+
+-->
+<script data-main='static/map/main.js' src="static/map/require.js"></script>
 
 </body>
 </html>

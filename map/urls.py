@@ -9,5 +9,4 @@ router.register(r'objects', ObjectsViewSet, 'objects')
 
 urlpatterns = router.urls
 urlpatterns += [path('', index, name='index'), ]
-urlpatterns += [path('map', map_view, name='map'), ]
 urlpatterns += [path('openmap', open_map_view, name='openmap'), ]

@@ -343,6 +343,7 @@ var AddNewPointView = Marionette.View.extend({
     },
     events: {
         'submit #element-form': 'addPoint',
+        'click #clear-button': 'clearForm',
         'click #add-element.card-header': 'toggleCard'
     },
 
@@ -354,8 +355,19 @@ var AddNewPointView = Marionette.View.extend({
         typeRegion.show(this.typesView);
     },
 
+    clearForm:  function (e){
+        e.preventDefault();
+        console.log('Clear form');
+        $("#add-name").val("");
+        $("#add-description").val("");
+        $("#add-point-lat").val("");
+        $("#add-point-lon").val("");
+        window.newPointSource.clear();
+    },
+
     addPoint: function (e) {
         e.preventDefault();
+        console.log('Add point');
         var name = $("#add-name").val();
         var description = $("#add-description").val();
         var lat = parseFloat($("#add-point-lat").val());
@@ -375,11 +387,7 @@ var AddNewPointView = Marionette.View.extend({
             }
         }, {"wait": true});
 
-        $("#add-name").val("");
-        $("#add-description").val("");
-        $("#add-point-lat").val("");
-        $("#add-point-lon").val("");
-        window.newPointSource.clear();
+        this.clearForm(e);
     },
     toggleCard: function () {
         $("#add-element-card").slideToggle();
@@ -580,7 +588,6 @@ var MainView = Marionette.View.extend({
 
 
 // Root app
-// ToDo: make view to show in app, not render stuff into
 var App = Marionette.Application.extend({
     region: '#container',
 
