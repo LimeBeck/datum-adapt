@@ -2,26 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="952a3abe-afe8-4b06-88a4-52b5f15ee443" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/images/icons8-библиотека-filled-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/images/icons8-лес-filled-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/images/icons8-памятник-filled-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/images/icons8-скамейке-в-парке-filled-50 (1).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/images/icons8-штанга-filled-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/images/location-pin (1).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/map/static/map/css/images/location-pin.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/map/static/map/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/map/static/map/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/map/static/map/css/main.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/map/static/map/css/main.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/map/static/map/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/map/static/map/css/style.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/map/static/map/css/map.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/map/static/map/css/open_map.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/map/static/map/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/map/static/map/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/map/static/map/css/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/map/static/map/css/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/map/static/map/js/modelViews/objView.js" beforeDir="false" afterPath="$PROJECT_DIR$/map/static/map/js/modelViews/objView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/map/static/map/js/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/map/static/map/js/utils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/map/static/map/js/views/mapView.js" beforeDir="false" afterPath="$PROJECT_DIR$/map/static/map/js/views/mapView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/map/static/map/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/map/static/map/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/map/static/map/sass/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/map/static/map/sass/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/map/static/map/js/views/typesFilterView.js" beforeDir="false" afterPath="$PROJECT_DIR$/map/static/map/js/views/typesFilterView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/map/templates/map/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/map/templates/map/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/map/templates/map/open_map.html" beforeDir="false" afterPath="$PROJECT_DIR$/map/templates/map/open_map.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -145,28 +136,30 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="8" />
-          <entry key="html" value="10" />
-          <entry key="jpg" value="1" />
-          <entry key="js" value="99" />
+          <entry key="css" value="9" />
+          <entry key="html" value="11" />
+          <entry key="jpg" value="2" />
+          <entry key="js" value="106" />
           <entry key="map" value="1" />
           <entry key="md" value="2" />
-          <entry key="png" value="12" />
+          <entry key="png" value="15" />
           <entry key="py" value="7" />
           <entry key="scss" value="8" />
+          <entry key="svg" value="1" />
           <entry key="tpl" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="8" />
-          <entry key="HTML" value="27" />
-          <entry key="Image" value="13" />
-          <entry key="JavaScript" value="97" />
+          <entry key="CSS" value="9" />
+          <entry key="HTML" value="28" />
+          <entry key="Image" value="17" />
+          <entry key="JavaScript" value="104" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Python" value="7" />
           <entry key="SCSS" value="8" />
+          <entry key="SVG" value="1" />
           <entry key="SourceMap" value="1" />
           <entry key="UML" value="2" />
         </counts>
@@ -174,10 +167,10 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="41" />
-          <entry key="html" value="210" />
-          <entry key="js" value="5324" />
+          <entry key="html" value="223" />
+          <entry key="js" value="6257" />
           <entry key="py" value="28" />
-          <entry key="scss" value="188" />
+          <entry key="scss" value="189" />
           <entry key="tpl" value="17" />
           <entry key="txt" value="151" />
         </counts>
@@ -185,11 +178,11 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="41" />
-          <entry key="HTML" value="227" />
-          <entry key="JavaScript" value="5324" />
+          <entry key="HTML" value="240" />
+          <entry key="JavaScript" value="6257" />
           <entry key="PLAIN_TEXT" value="151" />
           <entry key="Python" value="28" />
-          <entry key="SCSS" value="188" />
+          <entry key="SCSS" value="189" />
         </counts>
       </usages-collector>
     </session>
@@ -200,40 +193,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/map/templates/map/open_map.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="76" selection-start-line="25" selection-end-line="25" selection-end-column="76" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/map/static/map/templates/object-card-template.tpl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/map/static/map/sass/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
+            <state relative-caret-position="435">
               <caret line="29" column="19" lean-forward="true" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/map/static/map/main.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/map/static/map/js/modelViews/objView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+            <state relative-caret-position="480">
+              <caret line="71" column="47" lean-forward="true" selection-start-line="71" selection-start-column="47" selection-end-line="71" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -241,17 +213,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/map/static/map/js/views/mapView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="955">
-              <caret line="64" column="69" selection-start-line="64" selection-start-column="69" selection-end-line="64" selection-end-column="69" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/map/static/map/js/modelViews/objView.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="47" column="79" selection-start-line="47" selection-start-column="79" selection-end-line="47" selection-end-column="79" />
+            <state relative-caret-position="240">
+              <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -259,8 +222,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/map/static/map/js/utils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+            <state relative-caret-position="294">
+              <caret line="45" column="19" lean-forward="true" selection-start-line="35" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -302,7 +265,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/map/static/map/require_main.js" />
         <option value="$PROJECT_DIR$/adapt/settings.py" />
         <option value="$PROJECT_DIR$/map/static/map/js/lib/backbone.marionette.js" />
         <option value="$PROJECT_DIR$/map/static/map/js/lib/backbone.js" />
@@ -324,7 +286,6 @@
         <option value="$PROJECT_DIR$/map/static/map/js/views/typesListView.js" />
         <option value="$PROJECT_DIR$/map/static/map/js/views/typesForListView.js" />
         <option value="$PROJECT_DIR$/map/static/map/js/app.js" />
-        <option value="$PROJECT_DIR$/map/static/map/js/views/typesFilterView.js" />
         <option value="$PROJECT_DIR$/map/static/map/templates.html" />
         <option value="$PROJECT_DIR$/map/static/map/templates/main-view-template.tpl" />
         <option value="$PROJECT_DIR$/map/static/map/js/views/mainView.js" />
@@ -346,13 +307,15 @@
         <option value="$PROJECT_DIR$/map/static/map/templates/type-list-template.tpl" />
         <option value="$PROJECT_DIR$/map/static/map/js/modelViews/typesListView.js" />
         <option value="$PROJECT_DIR$/map/static/map/templates/ype-for-list-template.tpl" />
-        <option value="$PROJECT_DIR$/map/templates/map/open_map.html" />
         <option value="$PROJECT_DIR$/map/static/map/main.js" />
-        <option value="$PROJECT_DIR$/map/static/map/js/views/mapView.js" />
-        <option value="$PROJECT_DIR$/map/static/map/js/utils.js" />
-        <option value="$PROJECT_DIR$/map/static/map/js/modelViews/objView.js" />
         <option value="$PROJECT_DIR$/map/static/map/templates/object-card-template.tpl" />
         <option value="$PROJECT_DIR$/map/static/map/sass/main.scss" />
+        <option value="$PROJECT_DIR$/map/templates/map/index.html" />
+        <option value="$PROJECT_DIR$/map/templates/map/open_map.html" />
+        <option value="$PROJECT_DIR$/map/static/map/js/views/typesFilterView.js" />
+        <option value="$PROJECT_DIR$/map/static/map/js/utils.js" />
+        <option value="$PROJECT_DIR$/map/static/map/js/views/mapView.js" />
+        <option value="$PROJECT_DIR$/map/static/map/js/modelViews/objView.js" />
       </list>
     </option>
   </component>
@@ -396,8 +359,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="961" />
-    <option name="width" value="959" />
+    <option name="x" value="935" />
+    <option name="width" value="985" />
     <option name="height" value="1050" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -470,7 +433,25 @@
               <item name="map" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="map" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="datum-adapt-gulp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="datum-adapt-gulp" type="462c0819:PsiDirectoryNode" />
+              <item name="map" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="map" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="datum-adapt-gulp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="datum-adapt-gulp" type="462c0819:PsiDirectoryNode" />
+              <item name="map" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="map" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="collections" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="datum-adapt-gulp" type="b2602c69:ProjectViewProjectNode" />
@@ -745,14 +726,21 @@
       <option name="project" value="LOCAL" />
       <updated>1538488709759</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Add single style.css">
+      <created>1538556929149</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1538556929149</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="961" y="0" width="959" height="1050" extended-state="4" />
+    <frame x="935" y="0" width="985" height="1050" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49944994" visible="true" weight="0.23118865" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49944994" visible="true" weight="0.25768822" />
       <window_info id="Structure" order="1" sideWeight="0.50055003" side_tool="true" weight="0.19037433" />
       <window_info id="Favorites" order="2" sideWeight="0.50055003" side_tool="true" weight="0.19037433" />
       <window_info id="Gulp" order="3" side_tool="true" weight="0.3296582" />
@@ -763,7 +751,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32901832" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32929516" />
       <window_info anchor="bottom" id="Python Console" order="10" />
@@ -821,41 +809,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Add single style.css" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/map/static/map/js/collections/typesList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/static/map/js/models/objects.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="38" lean-forward="true" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/static/map/js/collections/objList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/static/map/js/openlayers_map.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="397" selection-start-line="397" selection-end-line="415" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/static/map/js/views/typesFilterView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/map/static/map/templates/main-view-template.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -912,13 +865,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/map/static/map/js/views/addNewPointView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/map/static/map/js/views/innerView.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -935,13 +881,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/map/static/map/templates/obj-list-template.tpl">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/static/map/js/modelViews/objListView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/map/static/map/js/modelViews/typesView.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -996,19 +935,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/map/static/map/css/images/parks.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/map/static/map/css/images/marker-shadow.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/static/map/css/images/marker-icon-2x.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/static/map/css/images/marker-icon.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/static/map/css/images/layers-2x.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/map/static/map/css/images/layers.png">
@@ -1019,13 +946,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/map/static/map/css/images/icons8-barbell-filled-50.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/static/map/js/views/mapView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="955">
-          <caret line="64" column="69" selection-start-line="64" selection-start-column="69" selection-end-line="64" selection-end-column="69" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/map/static/map/css/assets/cancel.png">
       <provider selected="true" editor-type-id="images" />
@@ -1038,27 +958,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/map/static/map/css/assets/rulers.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/static/map/js/utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/static/map/js/modelViews/objView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="47" column="79" selection-start-line="47" selection-start-column="79" selection-end-line="47" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/templates/map/open_map.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="76" selection-start-line="25" selection-end-line="25" selection-end-column="76" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/map/static/map/templates/objects-view-template.tpl">
       <provider selected="true" editor-type-id="text-editor">
@@ -1090,13 +989,92 @@
       </provider>
       <provider editor-type-id="sourcemapFileViewerProvider" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/map/static/map/css/images/marker-icon.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/static/map/css/images/marker-icon-2x.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/static/map/css/images/parks.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/static/map/css/images/search-solid.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/static/map/css/images/layers-2x.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/map/static/map/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-140090" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/templates/map/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/static/map/js/collections/objList.js">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/static/map/js/collections/typesList.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/static/map/js/views/typesFilterView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/static/map/js/modelViews/objListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/templates/map/open_map.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/map/static/map/sass/main.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
+        <state relative-caret-position="435">
           <caret line="29" column="19" lean-forward="true" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/static/map/js/views/addNewPointView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-60">
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/static/map/js/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="45" column="19" lean-forward="true" selection-start-line="35" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/static/map/js/views/mapView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/static/map/js/modelViews/objView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="71" column="47" lean-forward="true" selection-start-line="71" selection-start-column="47" selection-end-line="71" selection-end-column="47" />
         </state>
       </provider>
     </entry>

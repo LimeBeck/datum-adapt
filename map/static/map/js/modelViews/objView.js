@@ -27,6 +27,14 @@ define(["marionette",
             },
             childView: TypesView,
 
+            events: {
+                'click .card-header': 'flyToMarker',
+                'click #delete': 'deleteModel',
+                'click #cancel-button': 'cancel',
+                'click #change-button': 'saveModel',
+                'click #change': 'changeModel'
+            },
+
             initialize: function () {
                 this.listenTo(this.model, 'change', this.render);
                 this.listenTo(this.model, 'destroy', this.remove);
@@ -44,15 +52,27 @@ define(["marionette",
                     card: this
                 });
 
+
                 // Set style to marker
                 if (0 < this.model.get('type') && this.model.get('type') < 5) {
-                    this.marker.setStyle(utils.styles[this.model.get('type')]);
+                    var style_set = utils.styles[this.model.get('type')];
                 }
                 else {
-                    this.marker.setStyle(utils.styles["0"]);
+                    var style_set = utils.styles["0"];
+
                 }
+                style_set.text = new ol.style.Text(utils.styleset.text);
+                var style = new ol.style.Style(style_set);
+                style.getText().setText(this.model.get('name'));
+                this.marker.setStyle(style);
 
                 // Add marker on markers layer
+                var id = this.model.get('id');
+                window.markersSource.forEachFeature(function (feature) {
+                    if (feature.get("id") === id) {
+                        window.markersSource.removeFeature(feature);
+                    }
+                });
                 window.markersSource.addFeature(this.marker);
 
                 this.render()
@@ -103,17 +123,10 @@ define(["marionette",
                 }
             },
 
-
-            events: {
-                'click .card-header': 'flyToMarker',
-                'click #delete': 'deleteModel',
-                'click #cancel-button': 'cancel',
-                'click #change-button': 'saveModel',
-                'click #change': 'changeModel'
-            },
             collapsed: true,
+
             flyToMarker: function (e) {
-                //console.log(this.marker);
+                console.log("Fly to marker");
                 if (this.collapsed) {
                     //$(".collapse:visible").slideToggle();
                     $(e.currentTarget).parent().find(".collapse").slideToggle();

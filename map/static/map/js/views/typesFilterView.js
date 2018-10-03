@@ -5,6 +5,7 @@ define(["marionette", "js/modelViews/typesView"],
             collectionEvents: {
                 'sync': 'render'
             },
+            viewComparator: "id",
             initialize() {
                 this.collection.fetch();
                 window.filterType = [];
