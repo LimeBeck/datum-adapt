@@ -22,15 +22,17 @@ define(["marionette", "ol", "tpl!templates/map-view-template.tpl"], function (Ma
             });
             window.markersSource = new ol.source.Vector({});
 
+
             // Make layer with markers and add it to the map
             var markersLayer = new ol.layer.Vector({
-                source: window.markersSource
+                source: window.markersSource,
+                declutter: true
             });
 
             window.map.addLayer(markersLayer);
 
             // Listen to moving map (cos openlayers dont have zoom event) and decide to hide markers
-            window.map.on(
+            /*window.map.on(
                 'moveend', function () {
                     // console.log("Zoom:" + window.view.getZoom())
                     if (window.view.getZoom() < 15) {
@@ -40,7 +42,7 @@ define(["marionette", "ol", "tpl!templates/map-view-template.tpl"], function (Ma
                         markersLayer.setVisible(true)
                     }
                 }
-            );
+            );*/
 
             // Make different layer for new point
             window.newPointSource = new ol.source.Vector({});
@@ -53,15 +55,20 @@ define(["marionette", "ol", "tpl!templates/map-view-template.tpl"], function (Ma
 
             // Add new point on map by click and write it coords in form
             window.map.on("click", function (e) {
+                console.log('Map click');
                 var feature = map.forEachFeatureAtPixel(e.pixel,
                     function (feature) {
                         return feature;
                     });
                 if (feature) {
+                    console.log('Icon click');
                     let card = feature.get("card");
-                    if(card){
-                        feature.get("card").$el.find(".card-header").trigger("click");
+                    if (card) {
+                        let header = card.$el.find(".card-header");
+                        console.log("Header", header);
+                        header.trigger('click');
                     } else {
+                        console.log("Icon delete");
                         window.newPointSource.removeFeature(feature);
                     }
 

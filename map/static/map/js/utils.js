@@ -31,45 +31,66 @@ define(["backbone", "ol", "jquery"], function (Backbone, ol, $) {
         };
     };
 
+    utils.styleset = {};
+
+    utils.styleset.text = {
+        font: '12px Calibri,sans-serif',
+        stroke: new ol.style.Stroke({
+            color: 'white',
+            width: 7,
+        }),
+        overflow: false,
+        fill: new ol.style.Fill({
+            color: '#242424'
+        }),
+        offsetY: 15
+    };
+
 
     utils.styles = {
-        0: new ol.style.Style({
+        0: {
             image: new ol.style.Icon(({
                 crossOrigin: 'anonymous',
                 src: 'static/map/css/images/location-pin (1).png',
                 size: [64, 64],
-                scale: 0.6
+                anchor: [0.5, 1],
+                scale: 0.6,
+                color: "#4271AE",
             }))
-        }),
-        1: new ol.style.Style({
+        },
+        1: {
             image: new ol.style.Icon(({
                 crossOrigin: 'anonymous',
                 src: 'static/map/css/images/icons8-park-bench-filled-50.png',
                 size: [50, 50],
+                anchor: [0.5, 1],
                 scale: 0.7
             }))
-        }),
-        2: new ol.style.Style({
+        },
+        2: {
             image: new ol.style.Icon(({
                 crossOrigin: 'anonymous',
                 src: 'static/map/css/images/icons8-monument-filled-50.png',
-                scale: 0.7
+                scale: 0.7,
+                anchor: [0.5, 1]
             }))
-        }),
-        3: new ol.style.Style({
+        },
+        3: {
             image: new ol.style.Icon(({
                 crossOrigin: 'anonymous',
                 src: 'static/map/css/images/icons8-library-filled-50.png',
-                scale: 0.7
+                scale: 0.7,
+                anchor: [0.5, 1]
             }))
-        }),
-        4: new ol.style.Style({
+        },
+        4: {
             image: new ol.style.Icon(({
                 crossOrigin: 'anonymous',
                 src: 'static/map/css/images/icons8-barbell-filled-50.png',
-                scale: 0.7
+                scale: 0.7,
+                anchor: [0.5, 1]
             }))
-        })
+        }
     };
 
     return utils;
