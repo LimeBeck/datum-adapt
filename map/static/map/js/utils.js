@@ -33,6 +33,14 @@ define(["backbone", "ol", "jquery"], function (Backbone, ol, $) {
 
 
     utils.styles = {
+        0: new ol.style.Style({
+            image: new ol.style.Icon(({
+                crossOrigin: 'anonymous',
+                src: 'static/map/css/images/location-pin (1).png',
+                size: [64, 64],
+                scale: 0.6
+            }))
+        }),
         1: new ol.style.Style({
             image: new ol.style.Icon(({
                 crossOrigin: 'anonymous',

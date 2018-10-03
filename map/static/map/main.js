@@ -33,8 +33,7 @@ requirejs.config({
 );
 
 require(["app", "js/utils"],
-    function (App, utils, templates) {
-        console.log(templates);
+    function (App, utils) {
         utils.setToken();
         utils.setSlashes();
         var app = new App();
