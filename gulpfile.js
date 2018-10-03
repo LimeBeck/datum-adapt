@@ -10,6 +10,8 @@ var cleanCSS = require ('gulp-clean-css') ;
 var htmlmin = require('gulp-htmlmin');
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
+var rjs = require('gulp-requirejs'); 
+var del = require('del')
 
 // This task can be called from the command line with  `gulp django`
 gulp.task('django', function () {
@@ -34,7 +36,11 @@ gulp.task('sass-styles', function () {
 
 });
 
-gulp.task('styles', function () {
+gulp.task('del_style', function(){
+    return del('map/static/map/css/style.css{,.map}')
+});
+
+gulp.task('styles', gulp.series('del_style', function () {
     return gulp.src('map/static/map/css/*.css')
         .pipe(debug())
         .pipe(sourcemaps.init())
@@ -44,7 +50,9 @@ gulp.task('styles', function () {
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('map/static/map/css'));
 
-});
+}));
+
+gulp.task('make-styles', gulp.series('sass-styles', 'styles'))
 
 gulp.task('minify', function() {
     return gulp.src('map/**/*.{html, tpl}')
@@ -55,7 +63,18 @@ gulp.task('minify', function() {
           }))
     .pipe(debug())
     .pipe(gulp.dest('map/dist/'))
-})
+});
+
+gulp.task('requirejsBuild', function(){
+    return rjs({
+        baseUrl: 'map/static/map/',
+        name: 'main',
+        mainConfigFile: 'map/static/map/main.js',
+        out: 'require.built.js'
+    })
+    .pipe(gulp.dest('map/static/map/'));
+
+});
 
 // Initiate browsersync and point it at localhost:8000
 gulp.task('browsersync', function () {
@@ -69,8 +88,8 @@ gulp.task('browsersync', function () {
 });
 
 gulp.task('watch', function(){
-    gulp.watch('map/static/map/sass/**/*.scss', gulp.series('styles'));
-    gulp.watch('**/*.{scss,css,html,py,js}').on('change', reload);
+    gulp.watch('map/static/map/sass/**/*.scss', gulp.series('make-styles'));
+    //gulp.watch('**/*.{scss,css,html,py,js}').on('change', gulp.series("styles", reload));
 });
 
 
@@ -79,4 +98,4 @@ gulp.task('runserver',
         gulp.parallel('django', 'browsersync', 'watch')));
 
 // This task can be called with `gulp`
-gulp.task('default', gulp.series('django', 'browsersync', 'watch'));
+gulp.task('default', gulp.series('runserver'));

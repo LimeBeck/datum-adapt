@@ -41,14 +41,15 @@ define(["marionette",
                     name: this.model.get('name'),
                     description: this.model.get('description'),
                     id: this.model.get('id'),
+                    card: this
                 });
 
                 // Set style to marker
-                if (0 < this.model.get('type') < 5) {
+                if (0 < this.model.get('type') && this.model.get('type') < 5) {
                     this.marker.setStyle(utils.styles[this.model.get('type')]);
                 }
                 else {
-                    this.marker.setStyle(utils.styles["1"]);
+                    this.marker.setStyle(utils.styles["0"]);
                 }
 
                 // Add marker on markers layer
@@ -82,6 +83,7 @@ define(["marionette",
             },
             onRender() {
                 // console.log('Show');
+
                 var typeRegion = this.getRegion('showType');
                 if (this.toChange) {
                     var types = new TypesList();
@@ -99,7 +101,6 @@ define(["marionette",
                     var typeObj = new TypesView({model: type});
                     typeRegion.show(typeObj)
                 }
-
             },
 
 

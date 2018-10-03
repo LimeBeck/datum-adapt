@@ -53,25 +53,40 @@ define(["marionette", "ol", "tpl!templates/map-view-template.tpl"], function (Ma
 
             // Add new point on map by click and write it coords in form
             window.map.on("click", function (e) {
-                var latlon = ol.proj.transform(e.coordinate, 'EPSG:3857', 'EPSG:4326');
-                $("#add-point-lat").val(latlon[0]);
-                $("#add-point-lon").val(latlon[1]);
-                $("#change-point-lat").val(latlon[0]);
-                $("#change-point-lon").val(latlon[1]);
-                var newPoint = new ol.Feature({
-                    geometry: new ol.geom.Point(ol.proj.fromLonLat(latlon))
-                });
-                newPoint.setStyle(new ol.style.Style({
-                    image: new ol.style.Icon(({
-                        crossOrigin: 'anonymous',
-                        src: 'static/map/css/images/hospital.png',
-                        size: [128, 128],
-                        scale: 0.4,
-                        anchor: [0.5, 1]
-                    }))
-                }));
-                window.newPointSource.clear();
-                window.newPointSource.addFeature(newPoint);
+                var feature = map.forEachFeatureAtPixel(e.pixel,
+                    function (feature) {
+                        return feature;
+                    });
+                if (feature) {
+                    let card = feature.get("card");
+                    if(card){
+                        feature.get("card").$el.find(".card-header").trigger("click");
+                    } else {
+                        window.newPointSource.removeFeature(feature);
+                    }
+
+                } else {
+                    var latlon = ol.proj.transform(e.coordinate, 'EPSG:3857', 'EPSG:4326');
+                    $("#add-point-lat").val(latlon[0]);
+                    $("#add-point-lon").val(latlon[1]);
+                    $("#change-point-lat").val(latlon[0]);
+                    $("#change-point-lon").val(latlon[1]);
+                    var newPoint = new ol.Feature({
+                        geometry: new ol.geom.Point(ol.proj.fromLonLat(latlon))
+                    });
+                    newPoint.setStyle(new ol.style.Style({
+                        image: new ol.style.Icon(({
+                            crossOrigin: 'anonymous',
+                            src: 'static/map/css/images/hospital.png',
+                            size: [128, 128],
+                            scale: 0.4,
+                            anchor: [0.5, 1]
+                        }))
+                    }));
+                    window.newPointSource.clear();
+                    window.newPointSource.addFeature(newPoint);
+                }
+
             });
         }
     });

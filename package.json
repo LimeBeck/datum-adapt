@@ -19,6 +19,7 @@
   "devDependencies": {
     "autoprefixer": "^9.1.5",
     "browsersync": "0.0.1-security",
+    "del": "^3.0.0",
     "gulp": "^4.0.0",
     "gulp-clean-css": "^3.10.0",
     "gulp-cli": "^2.0.1",
@@ -27,6 +28,7 @@
     "gulp-debug": "^4.0.0",
     "gulp-htmlmin": "^5.0.1",
     "gulp-postcss": "^8.0.0",
+    "gulp-requirejs": "^1.2.0",
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
     "postcss-cli": "^6.0.0"
