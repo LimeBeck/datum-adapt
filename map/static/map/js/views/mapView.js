@@ -54,8 +54,8 @@ define(["marionette", "ol", "tpl!templates/map-view-template.tpl"], function (Ma
             window.map.addLayer(newPointLayer);
 
             // Add new point on map by click and write it coords in form
-            window.map.on("click", function (e) {
-                console.log('Map click');
+            window.map.on("singleclick", function (e) {
+                console.log('Map singleclick');
                 var feature = map.forEachFeatureAtPixel(e.pixel,
                     function (feature) {
                         return feature;
@@ -94,6 +94,29 @@ define(["marionette", "ol", "tpl!templates/map-view-template.tpl"], function (Ma
                     window.newPointSource.addFeature(newPoint);
                 }
 
+            });
+
+            window.map.on("dblclick", function (e) {
+
+                console.log('Map dblclick');
+                var feature = map.forEachFeatureAtPixel(e.pixel,
+                    function (feature) {
+                        return feature;
+                    });
+                if (feature) {
+                    e.preventDefault();
+                    console.log('Icon click');
+                    let card = feature.get("card");
+                    if (card) {
+                        let header = card.$el.find("#change");
+                        console.log("Header", header);
+                        header.trigger('click');
+                    } else {
+                        console.log("Icon delete");
+                        window.newPointSource.removeFeature(feature);
+                    }
+
+                }
             });
         }
     });

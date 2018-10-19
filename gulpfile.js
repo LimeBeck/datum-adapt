@@ -30,8 +30,6 @@ gulp.task('sass-styles', function () {
         .pipe(sourcemaps.init())
         .pipe(postcss([autoprefixer()]))
         .pipe(sourcemaps.write('.'))
-        .pipe(debug())
-        .pipe(cleanCSS())
         .pipe(gulp.dest('map/static/map/css'));
 
 });
@@ -46,6 +44,8 @@ gulp.task('styles', gulp.series('del_style', function () {
         .pipe(sourcemaps.init())
         .pipe(postcss([autoprefixer()]))
         .pipe(concat('style.css'))
+        .pipe(debug())
+        .pipe(cleanCSS())
         .pipe(debug())
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('map/static/map/css'));
