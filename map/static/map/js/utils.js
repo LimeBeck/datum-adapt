@@ -2,7 +2,7 @@ define(["backbone", "ol", "jquery"], function (Backbone, ol, $) {
     var utils = {};
     utils.setToken = function () {
         $(document).ajaxSend(function (event, request) {
-            var token = "Token 695672c4e9320d30f7714b35b069b8857b6bd63c";
+            var token = "Token 34e4ec3a2addcbbd6a324de601b3129c20dc7018";
             if (token) {
                 request.setRequestHeader("Authorization", token);
             }

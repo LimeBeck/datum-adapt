@@ -85,7 +85,7 @@ DATABASES = {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'adapt',
         'USER': 'postgres',
-        'PASSWORD': 'qwerty12+',
+        'PASSWORD': 'tO8Qa3ng',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
@@ -138,3 +138,19 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS=[os.path.join(BASE_DIR, 'static')]
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django.db.backends': {
+            'level': 'DEBUG',
+            'handlers': ['console'],
+        }
+    },
+}

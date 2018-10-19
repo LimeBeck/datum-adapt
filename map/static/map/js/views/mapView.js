@@ -63,10 +63,10 @@ define(["marionette", "ol", "tpl!templates/map-view-template.tpl"], function (Ma
                 if (feature) {
                     console.log('Icon click');
                     let card = feature.get("card");
-                    if (card) {
+                    if(card){
                         let header = card.$el.find(".card-header");
                         console.log("Header", header);
-                        header.trigger('click');
+                        feature.get("card").$el.find(".card-header").trigger("click");
                     } else {
                         console.log("Icon delete");
                         window.newPointSource.removeFeature(feature);
