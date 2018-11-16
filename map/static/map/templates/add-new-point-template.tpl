@@ -17,9 +17,9 @@
                 </div>
                 <div class="form-group">
                     <label for="add-point-lat">Широта</label>
-                    <input class="form-control" type="text" id="add-point-lat" required>
+                    <input class="form-control" type="text" id="add-point-lat" disabled>
                     <label for="add-point-lon">Долгота</label>
-                    <input class="form-control" type="text" id="add-point-lon" required>
+                    <input class="form-control" type="text" id="add-point-lon" disabled>
                     <label>(Берутся из точки на карте)</label>
                 </div>
                 <br>

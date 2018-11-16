@@ -19,20 +19,31 @@ define(["marionette",
               ObjCardTpl
     ) {
         var ObjView = Marionette.View.extend({
-            // Template get with jQuery, cos default underscore not working
-            // template: _.template($("#object-card-template").html()),
             template: ObjCardTpl,
             regions: {
                 showType: '#show-type-region'
             },
             childView: TypesView,
-
+            ui:{
+                'header': '.card-header',
+                'changeName': '#change-name',
+                'changeDescription': '#change-description',
+                'changePointLat': '#change-point-lat',
+                'changePointLon': '#change-point-lon',
+                'changeType': '#show-type-region',
+                'changeForm': '#change-form',
+                'changeButton': '#change',                  
+                'deleteButton': '#delete',                
+                'saveButton': '#change-button',
+                'cancelButton': '#cancel-button',
+                'body': '.card-body'
+            },
             events: {
-                'click .card-header': 'flyToMarker',
-                'click #delete': 'deleteModel',
-                'click #cancel-button': 'cancel',
-                'click #change-button': 'saveModel',
-                'click #change': 'changeModel'
+                'click @ui.header': 'flyToMarker',
+                'click @ui.deleteButton': 'deleteModel',
+                'click @ui.cancelButton': 'cancel',
+                'click @ui.saveButton': 'saveModel',
+                'click @ui.changeButton': 'changeModel'
             },
 
             initialize: function () {
@@ -163,10 +174,10 @@ define(["marionette",
             saveModel(e) {
                 e.preventDefault();
                 console.log("Save");
-                var name = $("#change-name").val();
-                var description = $("#change-description").val();
-                var lat = parseFloat($("#change-point-lat").val());
-                var lon = parseFloat($("#change-point-lon").val());
+                var name = this.ui.changeName.val();
+                var description = this.ui.changeDescription.val();
+                var lat = parseFloat(this.ui.changePointLat.val());
+                var lon = parseFloat(this.ui.changePointLon.val());
                 var geom = {
                     "type": "Point",
                     "coordinates": [
@@ -174,7 +185,7 @@ define(["marionette",
                         lon
                     ]
                 };
-                var type = parseInt($("#show-type-region #type-list-container").val());
+                var type = parseInt(this.ui.changeType.find("#type-list-container").val());
                 var attrs = {};
                 if (name !== this.model.get('name')) {
                     attrs.name = name;
@@ -191,13 +202,14 @@ define(["marionette",
                 }
                 if (Object.getOwnPropertyNames(attrs).length > 0) {
                     this.model.save(attrs, {patch: true});
+                    window.newPointSource.clear();
+                    window.markersSource.removeFeature(this.marker);
                 }
 
                 this.toChange = false;
                 this.render();
 
-                window.newPointSource.clear();
-                window.markersSource.removeFeature(this.marker);
+                
             },
             cancel() {
                 console.log("Cancel");
